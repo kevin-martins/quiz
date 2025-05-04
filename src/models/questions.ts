@@ -2,7 +2,7 @@ import { CategoriesModel } from "./categories"
 import { DifficultiesModel } from "./difficulties"
 import { GameModesModel } from "./gameModes"
 
-export type DataModel = {
+export type QuestionModel = {
   id: string
   category: CategoriesModel
   gameMode: GameModesModel

@@ -1,5 +1,5 @@
-import { data } from "../data/data"
-import { DataModel } from "../models/data"
+import { questions } from "../data/questions"
+import { QuestionModel } from "../models/questions"
 import { SettingsModels } from "../models/settings"
 
 export const getGameModeDescription = {
@@ -11,10 +11,10 @@ export const getGameModeDescription = {
   "Masqué": "Réponds à une série de questions avec une des réponses masquée."
 }
 
-export const setQuestions = (settings: SettingsModels): DataModel[] => {
+export const filterQuestions = (settings: SettingsModels): QuestionModel[] => {
   const { categories, difficulties, gameMode } = settings
 
-  return data.filter(d => categories.includes(d.category) && difficulties.includes(d.difficulty) && d.gameMode.includes(gameMode))
+  return questions.filter(question => categories.includes(question.category) && difficulties.includes(question.difficulty) && question.gameMode.includes(gameMode))
 }
 
 export const getRandomNumber = (max: number) => {

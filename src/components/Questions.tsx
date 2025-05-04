@@ -1,21 +1,20 @@
 import { RootState } from '../app/store'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
-import { useState } from 'react'
-import { DataModel } from '../models/data'
-import { addPoints } from '../features/gameSlice'
+import { QuestionModel } from '../models/questions'
+import { addPoints, newRandomQuestion } from '../features/gameSlice'
 import { getRandomNumber } from '../helpers/helpers'
 
 const Questions = () => {
   const { categories, difficulties, gameMode } = useAppSelector((state: RootState) => state.settings)
-  const { data, points } = useAppSelector((state: RootState) => state.game)
+  const { questions, currentQuestion, points } = useAppSelector((state: RootState) => state.game)
+  // const 
   const dispatch = useAppDispatch()
-  const [selectedQuestion, setSelectedQuestions] = useState<DataModel>(data[getRandomNumber(data.length)])
-
 
   const handleUserChoice = (choice: string, answer: string) => {
     if (choice === answer) {
       dispatch(addPoints(100))
     }
+    dispatch(newRandomQuestion())
   }
 
   return (
@@ -23,22 +22,22 @@ const Questions = () => {
       <span>Mode de jeu {gameMode}</span>
       <span>Difficulté: {difficulties}</span>
       <span>Categories: {categories}</span>
-      <span>Nombre de questions: {data.length}</span>
+      <span>Nombre de questions: {questions.length}</span>
       <span>points {points}</span>
 
       <div className='w-[1024px] m-auto'>
         <div className='flex'>
-          <span>{selectedQuestion.category}</span>
-          <span>{selectedQuestion.gameMode}</span>
-          <span>{selectedQuestion.difficulty}</span>
+          <span>{currentQuestion.category}</span>
+          <span>{currentQuestion.gameMode}</span>
+          <span>{currentQuestion.difficulty}</span>
         </div>
         <div>
-          <h2>{selectedQuestion.question}</h2>
+          <h2>{currentQuestion.question}</h2>
           <div className='grid grid-cols-2 gap-20'>
-            {selectedQuestion.choices.map(choice => (
+            {currentQuestion.choices.map((choice: string) => (
               <button
                 key={choice}
-                onClick={() => handleUserChoice(choice, selectedQuestion.answer)}
+                onClick={() => handleUserChoice(choice, currentQuestion.answer)}
                 className='bg-blue-300 py-4 rounded-lg hover:bg-blue-400 cursor-pointer'
               >
                 {choice}

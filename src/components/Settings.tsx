@@ -8,8 +8,8 @@ import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { difficulties } from '../data/difficulties'
 import { gameModes } from '../data/gameModes'
 import { GameModesModel } from '../models/gameModes'
-import { setQuestions } from '../helpers/helpers'
-import { setData } from '../features/gameSlice'
+import { filterQuestions } from '../helpers/helpers'
+import { setQuestions } from '../features/gameSlice'
 
 const Categories = () => {
   const selectedCategories: CategoriesModel[] = useAppSelector((state: RootState) => state.settings.categories)
@@ -147,8 +147,8 @@ const Settings = () => {
 
   const handleStartGame = () => {
     setOpen(false)
-    const data = setQuestions(settings)
-    dispatch(setData(data))
+    const questions = filterQuestions(settings)
+    dispatch(setQuestions(questions))
   }
 
   return (

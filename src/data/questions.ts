@@ -1,6 +1,6 @@
-import { DataModel } from "../models/data";
+import { QuestionModel } from "../models/questions";
 
-export const data: DataModel[] = [
+export const questions: QuestionModel[] = [
   {
     id: "c98a4b82-0e43-4c64-9a07-1efae0c8a9b1",
     category: "Histoire",
