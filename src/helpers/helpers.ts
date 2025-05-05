@@ -20,3 +20,11 @@ export const filterQuestions = (settings: SettingsModels): QuestionModel[] => {
 export const getRandomNumber = (max: number) => {
   return Math.floor(Math.random() * max);
 }
+
+export const getBooleanValue = (boolean: boolean) => {
+  return boolean ? "Vrai" : "Faux"
+}
+
+// export const getAllQuestionsById = (id: string[]) => {
+//   return 
+// }

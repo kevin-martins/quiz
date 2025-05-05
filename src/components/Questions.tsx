@@ -1,18 +1,21 @@
 import { RootState } from '../app/store'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
+import { addAnswer, addPoints, newRandomQuestion } from '../features/gameSlice'
 import { QuestionModel } from '../models/questions'
-import { addPoints, newRandomQuestion } from '../features/gameSlice'
-import { getRandomNumber } from '../helpers/helpers'
+import { getBooleanValue } from '../helpers/helpers'
 
 const Questions = () => {
   const { categories, difficulties, gameMode } = useAppSelector((state: RootState) => state.settings)
-  const { questions, currentQuestion, points } = useAppSelector((state: RootState) => state.game)
+  const { questions, currentQuestion, points, answers } = useAppSelector((state: RootState) => state.game)
   // const 
   const dispatch = useAppDispatch()
 
   const handleUserChoice = (choice: string, answer: string) => {
     if (choice === answer) {
+      dispatch(addAnswer(true))
       dispatch(addPoints(100))
+    } else {
+      dispatch(addAnswer(false))
     }
     dispatch(newRandomQuestion())
   }
@@ -47,6 +50,13 @@ const Questions = () => {
         </div>
       </div>
 
+      <div>
+        {answers.map(answer => {
+          return (
+            <p>{answer.question}: {getBooleanValue(answer.isCorrect)}</p>
+          )
+        })}
+      </div>
     </div>
   )
 }

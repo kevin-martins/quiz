@@ -1,24 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { questions } from '../data/questions'
 import { QuestionModel } from '../models/questions'
-import { getRandomNumber } from '../helpers/helpers'
+import { getAllQuestionsById, getRandomNumber } from '../helpers/helpers'
+
+type AnswersModel = {
+  id: string
+  isCorrect: boolean
+}
 
 export interface InitialState {
   questions: QuestionModel[],
   currentQuestion: QuestionModel,
-  oldQuestions: string[],
-  points: number,
-  goodAnswer: string[],
-  badAnswer: string[]
+  answers: AnswersModel[],
+  points: number
 }
 
 const initialState: InitialState = {
   questions,
   currentQuestion: questions[getRandomNumber(questions.length)],
-  oldQuestions: [],
-  points: 0,
-  goodAnswer: [],
-  badAnswer: []
+  answers: [],
+  points: 0
 }
 
 export const gameSlice = createSlice({
@@ -32,23 +33,27 @@ export const gameSlice = createSlice({
       
       state.currentQuestion = state.questions[getRandomNumber(state.questions.length)]
     },
-    addGoodAnswer: (state, action: PayloadAction<string>) => {
-      state.goodAnswer.push(action.payload)
+    addAnswer: (state, action: PayloadAction<boolean>) => {
+      state.answers.push({
+        id: state.currentQuestion.id,
+        isCorrect: action.payload
+      })
     },
-    addBadAnswer: (state, action: PayloadAction<string>) => {
-      state.badAnswer.push(action.payload)
+    getAllQuestionsById: (state) => {
+      return state.answers.reduce((acc: QuestionModel[], curr: AnswersModel) => {
+        return acc.push(state.questions[state.questions.indexOf(curr.id)])
+      }, [])
     },
     addPoints: (state, action: PayloadAction<number>) => {
       state.points += action.payload
-    },
+    }
   },
 })
 
 export const {
   setQuestions,
   newRandomQuestion,
-  addGoodAnswer,
-  addBadAnswer,
+  addAnswer,
   addPoints
 } = gameSlice.actions
 
