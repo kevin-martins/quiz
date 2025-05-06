@@ -129,7 +129,7 @@ const GameMode = () => {
             <button
               key={gameMode}
               onClick={() => handleSetGameMode(gameMode)}
-              className={`w-full border-[.5px] border-gray-400 rounded cursor-pointer ${selectedGameMode === gameMode ? "bg-green-200 hover:bg-red-200" : "hover:bg-gray-200"}`}
+              className={`w-full border-[.5px] border-gray-400 rounded ${selectedGameMode === gameMode ? "bg-green-200" : "cursor-pointer hover:bg-gray-200"}`}
             >
               {gameMode}
             </button>
