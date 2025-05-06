@@ -1,4 +1,5 @@
 import { questions } from "../data/questions"
+import { AnswersModel } from "../models/answers"
 import { QuestionModel } from "../models/questions"
 import { SettingsModels } from "../models/settings"
 
@@ -25,6 +26,11 @@ export const getBooleanValue = (boolean: boolean) => {
   return boolean ? "Vrai" : "Faux"
 }
 
-// export const getAllQuestionsById = (id: string[]) => {
-//   return 
-// }
+export const getAllQuestionsById = (questions: QuestionModel[], answers: AnswersModel[]) => {
+  return answers.reduce((acc: (QuestionModel & { isCorrect: boolean })[], curr: AnswersModel) => {
+    const { id, isCorrect } = curr
+    const question = questions.find((question: QuestionModel) => question.id === id)!
+    acc.push({ ...question, isCorrect })
+    return acc
+  }, [])
+}
