@@ -185,7 +185,7 @@ export const questions: QuestionModel[] = [
     id: "3f7dcbd2-8261-4ae0-a5f9-daf7de2df632",
     category: "Littérature",
     gameMode: "Classique",
-    difficulty: "Extrême",
+    difficulty: "Expert",
     question: "Qui a écrit le roman 'À la recherche du temps perdu' ?",
     choices: ["André Gide", "Paul Valéry", "Marcel Proust", "Albert Camus"],
     answer: "Marcel Proust",
@@ -200,5 +200,105 @@ export const questions: QuestionModel[] = [
     choices: ["Tom Hanks", "Harrison Ford", "Brad Pitt", "George Clooney"],
     answer: "Harrison Ford",
     explanation: "Harrison Ford est mondialement connu pour son rôle d’Indiana Jones dans la série de films d’aventure."
+  },
+  {
+    id: "20cfe8fc-0d34-40b6-933a-6d6099cb2631",
+    category: "Histoire",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel roi de France a été guillotiné pendant la Révolution française ?",
+    choices: ["Louis XIV", "Louis XVI", "Charles X", "Louis-Philippe"],
+    answer: "Louis XVI",
+    explanation: "Louis XVI a été exécuté en 1793 pendant la Révolution française pour trahison."
+  },
+  {
+    id: "5af8f002-eef4-4c8f-bc56-f54c56db94be",
+    category: "Géographie",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Le Nil est le fleuve le plus long du monde.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "Le Nil, avec environ 6 650 km, est souvent considéré comme le fleuve le plus long du monde, bien que certaines sources mentionnent l’Amazone."
+  },
+  {
+    id: "fbe28567-d61c-40cf-9f3a-ff0a69b169ae",
+    category: "Mathématiques",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel est le résultat de 12 × 13 ?",
+    choices: ["146", "156", "166", "176"],
+    answer: "156",
+    explanation: "12 multiplié par 13 donne 156."
+  },
+  {
+    id: "79689f67-b60f-4b55-bbdf-0e71e1e2a07e",
+    category: "Physique",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quelle est l’unité de mesure de la force dans le système international ?",
+    choices: ["Joule", "Pascal", "Newton", "Watt"],
+    answer: "Newton",
+    explanation: "La force se mesure en Newtons (N) dans le système international d’unités."
+  },
+  {
+    id: "34762a30-66aa-4d1f-a933-cdd7dfb3e31f",
+    category: "Chimie",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel est le symbole chimique de l’eau ?",
+    choices: ["O2", "H2", "H2O", "HO2"],
+    answer: "H2O",
+    explanation: "La molécule d’eau est composée de deux atomes d’hydrogène et un atome d’oxygène, soit H2O."
+  },
+  {
+    id: "fd985b32-7ce5-4fc0-9bd3-5500b2637f4d",
+    category: "Biologie",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Moyen",
+    question: "Le cœur humain possède quatre cavités.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "Le cœur humain comporte deux oreillettes et deux ventricules, soit quatre cavités."
+  },
+  {
+    id: "a944b700-3ae9-4c16-8412-ccba62ad2db4",
+    category: "Littérature",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel auteur a écrit 'À la recherche du temps perdu' ?",
+    choices: ["Marcel Proust", "André Gide", "Paul Valéry", "Albert Camus"],
+    answer: "Marcel Proust",
+    explanation: "Marcel Proust est l’auteur de cette œuvre monumentale composée de sept volumes."
+  },
+  {
+    id: "3be6f2b0-27f7-41e5-a06c-ec3e987b0ab0",
+    category: "Art",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Qui a peint la Joconde ?",
+    choices: ["Raphaël", "Michel-Ange", "Léonard de Vinci", "Caravage"],
+    answer: "Léonard de Vinci",
+    explanation: "La Joconde est une peinture célèbre de Léonard de Vinci, exposée au Louvre à Paris."
+  },
+  {
+    id: "7b517315-0c3e-48b8-a6d6-43e222b1b727",
+    category: "Informatique",
+    gameMode: "Classique",
+    difficulty: "Expert",
+    question: "Quel algorithme est utilisé pour chiffrer les connexions HTTPS ?",
+    choices: ["RSA", "MD5", "SHA-256", "DES"],
+    answer: "RSA",
+    explanation: "Le protocole HTTPS utilise des algorithmes asymétriques comme RSA pour chiffrer les échanges entre client et serveur."
+  },
+  {
+    id: "3d3fc13b-8452-47d6-89e3-d0f738fd25a2",
+    category: "Sport",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Un match de rugby oppose deux équipes de 15 joueurs.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "Au rugby à XV, chaque équipe est composée de 15 joueurs sur le terrain."
   }
 ]

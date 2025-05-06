@@ -4,5 +4,5 @@ export const difficulties: DifficultiesModel[] = [
   "Facile",
   "Moyen",
   "Difficile",
-  "Extrême"
+  "Expert"
 ]

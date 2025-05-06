@@ -63,7 +63,7 @@ export const setDifficultyColor = (difficulty: DifficultiesModel) => {
       return "bg-yellow-300"
     case "Difficile":
       return "bg-red-300"
-    case "Extrême":
+    case "Expert":
       return "bg-purple-300"
     default:
       return ""
