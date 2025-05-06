@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useAppSelector } from "../app/hooks";
 import { RootState } from "../app/store";
 import { LadderBoardType } from "../models/ladderBoard";
-import { getAllQuestionsById } from "../helpers/helpers";
+import { getAllQuestionsById, setDifficultyColor } from "../helpers/helpers";
 
 const LadderBoard = () => {
-  const { questions, currentQuestion, points, answers } = useAppSelector((state: RootState) => state.game)
+  const { questions, answers } = useAppSelector((state: RootState) => state.game)
   const [ladderBoard, setLadderBoard] = useState<LadderBoardType>(LadderBoardType.ANSWERS)
 
   return (
@@ -30,11 +30,14 @@ const LadderBoard = () => {
         <div className='flex flex-col gap-[2px]'>
           {getAllQuestionsById(questions, answers).map((answer) => {
             return (
-              <p
-                className={`rounded px-2 w-max ${answer.isCorrect ? "bg-green-200" : "bg-red-200"}`}
-              >
-                {answer.question}
-              </p>
+              <div key={answer.id} className='grid grid-cols-8 gap-1'>
+                <p className={`px-4 py-1 rounded-lg text-center ${setDifficultyColor(answer.difficulty)}`}>{answer.difficulty}</p>
+                <p
+                  className={`rounded-lg px-2 py-1 w-max ${answer.isCorrect ? "bg-green-200" : "bg-red-200"}`}
+                >
+                  {answer.question}
+                </p>
+              </div>
             )
           })}
         </div>

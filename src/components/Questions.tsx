@@ -27,7 +27,6 @@ const Questions = () => {
       <span>Difficulté: {difficulties.map(difficulty => <span className={`px-4 py-1 mx-1 ${setDifficultyColor(difficulty)} rounded-lg`}>{difficulty}</span>)}</span>
       <span>Categories: {categories}</span>
       <span>Nombre de questions: {questions.length}</span>
-      <span>points {points}</span>
 
       <div className='w-[1024px] m-auto'>
         <div className='flex items-center mb-5'>
@@ -36,6 +35,7 @@ const Questions = () => {
             <p className={`px-4 py-1 rounded-lg ${setGameModeColor(currentQuestion.gameMode)}`}>{currentQuestion.gameMode}</p>
             <p className={`px-4 py-1 rounded-lg ${setDifficultyColor(currentQuestion.difficulty)}`}>{currentQuestion.difficulty}</p>
           </div>
+          <span className='text-xl ml-auto bg-yellow-200 px-2 mt-auto py-1 rounded-lg'>{points} $</span>
         </div>
         <div>
           <h2 className='text-lg'>{currentQuestion.question}</h2>
