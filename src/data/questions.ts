@@ -300,5 +300,395 @@ export const questions: QuestionModel[] = [
     choices: ["Vrai", "Faux"],
     answer: "Vrai",
     explanation: "Au rugby à XV, chaque équipe est composée de 15 joueurs sur le terrain."
+  },
+  {
+    id: "63f71a22-4b67-4eec-a2f7-d1d4b0c38f5b",
+    category: "Culture Générale",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Combien y a-t-il de continents sur Terre ?",
+    choices: ["5", "6", "7", "8"],
+    answer: "7",
+    explanation: "Il y a 7 continents : Afrique, Amérique du Nord, Amérique du Sud, Antarctique, Asie, Europe, Océanie."
+  },
+  {
+    id: "8f426cc6-361b-4c3e-8c9e-7db388089243",
+    category: "Musique",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Mozart était un compositeur du XXe siècle.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "Mozart était un compositeur du XVIIIe siècle, principalement associé à la période classique."
+  },
+  {
+    id: "e2c12df4-7c76-43dc-a13b-0c47233d435b",
+    category: "Sciences Sociales",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel philosophe a écrit 'Le Contrat Social' ?",
+    choices: ["Voltaire", "Montesquieu", "Rousseau", "Descartes"],
+    answer: "Rousseau",
+    explanation: "Jean-Jacques Rousseau a écrit 'Du contrat social' en 1762, une œuvre majeure de la philosophie politique."
+  },
+  {
+    id: "b155d997-1292-4964-a1b5-bbe4776ac85e",
+    category: "Biologie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel organe humain est principalement responsable de la filtration du sang ?",
+    choices: ["Le foie", "Le cœur", "Le rein", "La rate"],
+    answer: "Le rein",
+    explanation: "Les reins filtrent le sang pour éliminer les déchets et produire l’urine."
+  },
+  {
+    id: "edb49014-9355-4f8e-b2c3-7481e237c4a2",
+    category: "Mathématiques",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Combien de côtés possède un hexagone ?",
+    choices: ["5", "6", "7", "8"],
+    answer: "6",
+    explanation: "Un hexagone est un polygone à 6 côtés."
+  },
+  {
+    id: "0c33f1bc-d14d-4f2e-9304-574b1d22131d",
+    category: "Cinéma",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel film a remporté l’Oscar du meilleur film en 1994 ?",
+    choices: ["Forrest Gump", "Pulp Fiction", "The Shawshank Redemption", "Quatre mariages et un enterrement"],
+    answer: "Forrest Gump",
+    explanation: "Forrest Gump a remporté l’Oscar du meilleur film en 1994, surpassant des films cultes comme Pulp Fiction."
+  },
+  {
+    id: "c3fa7628-1cb2-4f8d-8a4d-e808cf9e5e41",
+    category: "Physique",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Moyen",
+    question: "La température de zéro Kelvin correspond au zéro absolu.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "Zéro Kelvin représente la température la plus basse possible, où les particules cessent tout mouvement thermique."
+  },
+  {
+    id: "7f27885e-9f2e-4990-9dc6-91cc0649bfc3",
+    category: "Littérature",
+    gameMode: "Classique",
+    difficulty: "Expert",
+    question: "Quel écrivain français a obtenu le prix Nobel de littérature en 1957 ?",
+    choices: ["Albert Camus", "Jean-Paul Sartre", "André Gide", "Romain Gary"],
+    answer: "Albert Camus",
+    explanation: "Albert Camus a reçu le prix Nobel de littérature en 1957 pour l'ensemble de son œuvre, notamment 'L'Étranger'."
+  },
+  {
+    id: "76bd7c0a-dc87-4a5b-b2e7-c0a3e9df9d35",
+    category: "Art",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Dans quel musée est exposée la Joconde ?",
+    choices: ["Musée d'Orsay", "Le Louvre", "Le Prado", "Le MET"],
+    answer: "Le Louvre",
+    explanation: "La Joconde, peinte par Léonard de Vinci, est exposée au musée du Louvre à Paris."
+  },
+  {
+    id: "da0f3fcd-e837-4be0-9f5b-09b3ef07e0e2",
+    category: "Sport",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel pays a remporté la Coupe du Monde de football en 2014 ?",
+    choices: ["Argentine", "Brésil", "Allemagne", "Espagne"],
+    answer: "Allemagne",
+    explanation: "L'Allemagne a remporté la Coupe du Monde de la FIFA en 2014 au Brésil, battant l’Argentine en finale."
+  },
+  {
+    id: "4c7b36fc-365d-4ec3-b22e-bf2b6dfdb8b3",
+    category: "Histoire",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Qui était le premier empereur de France ?",
+    choices: ["Napoléon Bonaparte", "Louis XIV", "Charlemagne", "Henri IV"],
+    answer: "Napoléon Bonaparte",
+    explanation: "Napoléon Bonaparte est devenu le premier empereur de France en 1804."
+  },
+  {
+    id: "57f9ac35-e314-4fc9-861f-f0f893c80c60",
+    category: "Géographie",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Le fleuve Amazone traverse le Brésil.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "Le fleuve Amazone traverse une grande partie du Brésil avant de se jeter dans l’océan Atlantique."
+  },
+  {
+    id: "cab8cf18-2e78-43b5-881f-7cb016d32764",
+    category: "Mathématiques",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Combien font 12 x 12 ?",
+    choices: ["124", "134", "144", "154"],
+    answer: "144",
+    explanation: "12 multiplié par 12 donne 144."
+  },
+  {
+    id: "87a2f1da-d1fd-47c0-9a3f-1fa2c1df34e3",
+    category: "Chimie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel est le symbole chimique du sodium ?",
+    choices: ["Na", "So", "Sn", "S"],
+    answer: "Na",
+    explanation: "Le symbole chimique du sodium est Na, dérivé du latin 'Natrium'."
+  },
+  {
+    id: "8cd5b729-5e33-4c71-acc0-74974aa7cd02",
+    category: "Physique",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel scientifique a formulé la loi de la gravitation universelle ?",
+    choices: ["Einstein", "Galilée", "Newton", "Kepler"],
+    answer: "Newton",
+    explanation: "Isaac Newton a formulé la loi de la gravitation universelle au XVIIe siècle."
+  },
+  {
+    id: "4736ea3d-6842-4714-9e3d-384c74a0f020",
+    category: "Biologie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quelle molécule transporte l’oxygène dans le sang ?",
+    choices: ["Globuline", "Hémoglobine", "Insuline", "Adrénaline"],
+    answer: "Hémoglobine",
+    explanation: "L’hémoglobine est une protéine contenue dans les globules rouges qui transporte l’oxygène dans le corps."
+  },
+  {
+    id: "967a65b1-b653-4299-8666-052c01bfe1a7",
+    category: "Informatique",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel système d’exploitation est développé par Microsoft ?",
+    choices: ["Linux", "macOS", "Windows", "Ubuntu"],
+    answer: "Windows",
+    explanation: "Windows est un système d’exploitation développé par Microsoft depuis les années 80."
+  },
+  {
+    id: "f20648da-4b60-4e57-937c-f5ec865df43e",
+    category: "Littérature",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Victor Hugo a écrit 'Les Misérables'.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "Victor Hugo est l’auteur du célèbre roman 'Les Misérables', publié en 1862."
+  },
+  {
+    id: "bb78f5e7-b662-4356-88e7-3d3cf16c4c06",
+    category: "Art",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Qui a peint 'La Nuit étoilée' ?",
+    choices: ["Claude Monet", "Vincent Van Gogh", "Pablo Picasso", "Paul Cézanne"],
+    answer: "Vincent Van Gogh",
+    explanation: "'La Nuit étoilée' est une célèbre toile peinte par Van Gogh en 1889."
+  },
+  {
+    id: "a646e9db-53c5-4e91-b579-24a11e348fcf",
+    category: "Culture Générale",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel est le symbole chimique de l’eau ?",
+    choices: ["O2", "H2", "H2O", "CO2"],
+    answer: "H2O",
+    explanation: "La molécule d’eau est composée de deux atomes d’hydrogène et d’un atome d’oxygène, soit H2O."
+  },
+  {
+    id: "e87d5ec0-c7b6-4c94-8b25-cb33e5a7d40f",
+    category: "Sport",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel sport est pratiqué à Roland-Garros ?",
+    choices: ["Tennis", "Football", "Basketball", "Rugby"],
+    answer: "Tennis",
+    explanation: "Roland-Garros est un tournoi de tennis du Grand Chelem qui se tient chaque année à Paris."
+  },
+  {
+    id: "1e13d41a-95ee-44ec-b9ff-93f7408fdb16",
+    category: "Cinéma",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Le film 'Avatar' est sorti avant l’an 2000.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "'Avatar' est sorti en 2009, réalisé par James Cameron."
+  },
+  {
+    id: "2f6fcf21-4c82-4f8d-bcc5-00ff3277a82d",
+    category: "Musique",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Qui est l’auteur-compositeur de la chanson 'Imagine' ?",
+    choices: ["Elton John", "John Lennon", "Paul McCartney", "Bob Dylan"],
+    answer: "John Lennon",
+    explanation: "'Imagine' est une chanson emblématique de John Lennon sortie en 1971."
+  },
+  {
+    id: "f233ea1a-30fb-4190-b6a0-e171f46ce7f0",
+    category: "Mathématiques",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel est le résultat de l’intégrale de x² dx ?",
+    choices: ["x³ + C", "(1/3)x³ + C", "(1/2)x² + C", "x² + C"],
+    answer: "(1/3)x³ + C",
+    explanation: "L’intégrale de x² par rapport à x est (1/3)x³ + C, où C est une constante d’intégration."
+  },
+  {
+    id: "b858bc0e-bd56-49a0-b169-d6d6fa0bb88a",
+    category: "Culture Générale",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Combien de continents existe-t-il sur Terre ?",
+    choices: ["5", "6", "7", "8"],
+    answer: "7",
+    explanation: "Il y a 7 continents : Afrique, Amérique du Nord, Amérique du Sud, Antarctique, Asie, Europe et Océanie."
+  },
+  {
+    id: "9a642355-1794-497b-a56d-1c2caaae444a",
+    category: "Sciences Sociales",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel est le système politique des États-Unis ?",
+    choices: ["Monarchie", "République parlementaire", "République fédérale", "Dictature"],
+    answer: "République fédérale",
+    explanation: "Les États-Unis sont une république fédérale composée de 50 États et gouvernée par une constitution."
+  },
+  {
+    id: "4f24cb52-5d17-40e5-956d-138f2489f1bb",
+    category: "Littérature",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Qui a écrit 'L’Étranger' ?",
+    choices: ["Albert Camus", "Jean-Paul Sartre", "André Gide", "Boris Vian"],
+    answer: "Albert Camus",
+    explanation: "'L’Étranger' est un roman d’Albert Camus, publié en 1942, emblématique de l’absurde."
+  },
+  {
+    id: "12aef66b-23b4-40e7-9e50-36dd7f6d25c1",
+    category: "Informatique",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel langage est principalement utilisé pour les pages web ?",
+    choices: ["Python", "C++", "HTML", "Java"],
+    answer: "HTML",
+    explanation: "HTML est le langage de balisage standard pour créer des pages web."
+  },
+  {
+    id: "6b2c80e3-8489-45e3-9c3c-00f5de68256c",
+    category: "Biologie",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "L’ADN est présent uniquement chez les êtres humains.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "L’ADN est une molécule présente dans tous les êtres vivants, pas seulement chez les humains."
+  },
+  {
+    id: "6e5429e3-8491-441e-94dc-3e8ef9d7f624",
+    category: "Physique",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quelle unité mesure la fréquence ?",
+    choices: ["Newton", "Watt", "Hertz", "Joule"],
+    answer: "Hertz",
+    explanation: "La fréquence, c’est-à-dire le nombre de cycles par seconde, se mesure en hertz (Hz)."
+  },
+  {
+    id: "0199dc27-0b1c-43e2-89e4-d3481f7d9dc6",
+    category: "Chimie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel est le symbole chimique de l’or ?",
+    choices: ["O", "Ag", "Au", "Fe"],
+    answer: "Au",
+    explanation: "Le symbole chimique de l’or est 'Au', dérivé du mot latin 'Aurum'."
+  },
+  {
+    id: "1acace3a-763f-4b60-917a-207a3a18a5b8",
+    category: "Art",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Qui a peint 'La Joconde' ?",
+    choices: ["Michel-Ange", "Léonard de Vinci", "Raphaël", "Rembrandt"],
+    answer: "Léonard de Vinci",
+    explanation: "'La Joconde' est une œuvre célèbre peinte par Léonard de Vinci entre 1503 et 1506."
+  },
+  {
+    id: "c2ff08e2-027b-441e-bace-0e607e7e0a39",
+    category: "Géographie",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Le Nil est le plus long fleuve du monde.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "Le Nil est souvent considéré comme le plus long fleuve du monde, avec environ 6 650 km."
+  },
+  {
+    id: "c1d74ef5-529a-41fd-91e7-25b9d570f7ff",
+    category: "Histoire",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Qui était le premier président de la Cinquième République française ?",
+    choices: ["Georges Pompidou", "Charles de Gaulle", "François Mitterrand", "Jacques Chirac"],
+    answer: "Charles de Gaulle",
+    explanation: "Charles de Gaulle fut le premier président de la Cinquième République, élu en 1958."
+  },
+  {
+    id: "fe442a95-2a3a-4396-9312-7e3529c1b7d4",
+    category: "Culture Générale",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Combien de côtés a un hexagone ?",
+    choices: ["5", "6", "7", "8"],
+    answer: "6",
+    explanation: "Un hexagone est une figure géométrique à six côtés."
+  },
+  {
+    id: "47d3c01d-60a0-4a15-97c3-4dc7bcf8c3a5",
+    category: "Sciences Sociales",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel philosophe a écrit 'Le Contrat social' ?",
+    choices: ["Voltaire", "Montesquieu", "Jean-Jacques Rousseau", "Diderot"],
+    answer: "Jean-Jacques Rousseau",
+    explanation: "'Le Contrat social' est une œuvre politique majeure écrite par Rousseau en 1762."
+  },
+  {
+    id: "3b3ffb60-193f-4e0e-8e61-0d7a3605c2c1",
+    category: "Biologie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel organe du corps humain est responsable de la production d’insuline ?",
+    choices: ["Le foie", "Le pancréas", "Les reins", "L’estomac"],
+    answer: "Le pancréas",
+    explanation: "Le pancréas produit l’insuline, une hormone essentielle à la régulation du glucose sanguin."
+  },
+  {
+    id: "b1a56f3d-8f15-4215-9476-92b982b3e3fc",
+    category: "Informatique",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Le système d’exploitation Linux est payant.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "Linux est un système d’exploitation libre et gratuit, bien que certaines distributions puissent être payantes."
+  },
+  {
+    id: "65fd5b2e-4c8a-44a2-b7a0-dc4df8f0e3ef",
+    category: "Musique",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel compositeur est connu pour ses neuf symphonies ?",
+    choices: ["Mozart", "Beethoven", "Chopin", "Bach"],
+    answer: "Beethoven",
+    explanation: "Ludwig van Beethoven a composé neuf célèbres symphonies, dont la Neuvième avec l’Ode à la Joie."
   }
 ]
