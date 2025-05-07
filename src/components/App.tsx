@@ -11,8 +11,6 @@ const App = () => {
         <div className="w-full">
           <div className="w-[1024px] m-auto flex">
             <Settings />
-            {/* <Dropdown options={categories} />
-            <Dropdown options={categories} /> */}
           </div>
           <Questions />
         </div>
