@@ -4,7 +4,8 @@ import { GameModesModel } from "./gameModes"
 
 export type SettingsModels = {
   gameMode: GameModesModel
-  categories: CategoriesModel[],
-  difficulties: DifficultiesModel[],
+  categories: CategoriesModel[]
+  difficulties: DifficultiesModel[]
   showExplanation: boolean
+  badAnswerExplanation: boolean
 }

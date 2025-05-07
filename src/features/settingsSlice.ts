@@ -22,7 +22,8 @@ const initialState: SettingsModels = {
     'Sport'
   ],
   difficulties: ['Facile', 'Moyen'],
-  showExplanation: true
+  showExplanation: true,
+  badAnswerExplanation: false
 }
 
 export const settingsSlice = createSlice({
@@ -52,6 +53,9 @@ export const settingsSlice = createSlice({
     setShowExplanation: (state, action: PayloadAction<boolean>) => {
       state.showExplanation = action.payload
     },
+    setBadAnswerExplanation: (state, action: PayloadAction<boolean>) => {
+      state.badAnswerExplanation = action.payload
+    },
   },
 })
 
@@ -61,7 +65,8 @@ export const {
   removeCategory,
   addDifficulty,
   removeDifficulty,
-  setShowExplanation
+  setShowExplanation,
+  setBadAnswerExplanation
 } = settingsSlice.actions
 
 export default settingsSlice.reducer

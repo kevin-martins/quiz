@@ -7,7 +7,7 @@ import { setShowExplanation } from '../features/settingsSlice'
 import { useEffect, useState } from 'react'
 
 const Questions = () => {
-  const { categories, difficulties, gameMode, showExplanation } = useAppSelector((state: RootState) => state.settings)
+  const { categories, difficulties, gameMode, showExplanation, badAnswerExplanation } = useAppSelector((state: RootState) => state.settings)
   const { questions, currentQuestion, points } = useAppSelector((state: RootState) => state.game)
   const [explanationModal, setExplanationModal] = useState<boolean>(false)
   const dispatch = useAppDispatch()
@@ -37,10 +37,6 @@ const Questions = () => {
     }
   }, [explanationModal])
 
-  const handleOpenExplanationModal = () => {
-    setExplanationModal(true)
-  }
-
   const handleCloseExplanationModal = () => {
     setExplanationModal(false)
   }
@@ -57,7 +53,25 @@ const Questions = () => {
       <span>Nombre de questions: {questions.length}</span>
       <label htmlFor="showExplanation" className='flex items-center gap-2'>
         Afficher les explications
-        <input id="showExplanation" onChange={handleExplanationValue} type="checkbox" checked={showExplanation} />
+        <input
+          id="showExplanation"
+          className='mt-auto mb-1'
+          onChange={handleExplanationValue}
+          type="checkbox"
+          checked={showExplanation}
+        />
+        {showExplanation &&
+          <label htmlFor="badAnswerExplanation" className='flex items-center gap-2'>
+            seulement en cas de mauvaise réponse
+            <input
+              id="badAnswerExplanation"
+              className='mt-auto mb-1'
+              onChange={handleExplanationValue}
+              type="checkbox"
+              checked={badAnswerExplanation}
+            />
+          </label>
+        }
       </label>
 
       <div className='w-[1024px] m-auto'>
