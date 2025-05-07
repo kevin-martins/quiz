@@ -22,7 +22,7 @@ const initialState: SettingsModels = {
     'Sport'
   ],
   difficulties: ['Facile', 'Moyen'],
-  showExplanation: true
+  showExplanation: false
 }
 
 export const settingsSlice = createSlice({

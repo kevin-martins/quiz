@@ -4,7 +4,7 @@ import { addAnswer, addPoints, newRandomQuestion } from '../features/gameSlice'
 import { setDifficultyColor, setGameModeColor } from '../helpers/setColors'
 import LadderBoard from './LadderBoard'
 import { setShowExplanation } from '../features/settingsSlice'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Questions = () => {
   const { categories, difficulties, gameMode, showExplanation } = useAppSelector((state: RootState) => state.settings)
@@ -14,18 +14,28 @@ const Questions = () => {
 
   const handleUserChoice = (choice: string, answer: string) => {
     if (showExplanation) {
-      //close the show to generate the next question 
+      setExplanationModal(true)
+      handleEndGame(choice, answer)
     } else {
-
+      handleEndGame(choice, answer)
+      dispatch(newRandomQuestion())
     }
+  }
+
+  const handleEndGame = (choice: string, answer: string) => {
     if (choice === answer) {
       dispatch(addAnswer(true))
       dispatch(addPoints(100))
     } else {
       dispatch(addAnswer(false))
     }
-    dispatch(newRandomQuestion())
   }
+
+  useEffect(() => {
+    if (showExplanation && !explanationModal) {
+      dispatch(newRandomQuestion())
+    }
+  }, [explanationModal])
 
   const handleOpenExplanationModal = () => {
     setExplanationModal(true)
@@ -69,8 +79,8 @@ const Questions = () => {
             ))}
           </div>
         </div>
-        {explanationModal && showExplanation &&
-          <div className='absolute z-50 border-[2px] border-gray-100 rounded-lg p-2 top-1/2 right-1/2 translate-x-1/2 translate-y-1/2 bg-white'>
+        {(explanationModal && showExplanation) &&
+          <div className='absolute w-[550px] shadow-xl z-50 border-[2px] border-gray-100 rounded-lg p-2 top-1/2 right-1/2 translate-x-1/2 translate-y-1/2 bg-white'>
             <button
               onClick={handleCloseExplanationModal}
               className='ml-auto float-right cursor-pointer'
@@ -80,6 +90,7 @@ const Questions = () => {
             <p>
               {currentQuestion.explanation}
             </p>
+            <button onClick={handleCloseExplanationModal} className='bg-blue-300 hover:bg-blue-400 cursor-pointer rounded-lg w-44 m-auto py-1'>Ok</button>
           </div>
         }
       </div>
