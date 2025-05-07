@@ -14,21 +14,26 @@ const Questions = () => {
 
   const handleUserChoice = (choice: string, answer: string) => {
     if (showExplanation) {
-      setExplanationModal(true)
-      handleEndGame(choice, answer)
+      const hasWon = handleVictory(choice, answer)
+      if (!hasWon && badAnswerExplanation ) {
+        setExplanationModal(true)
+      } else {
+        setExplanationModal(true)
+      }
     } else {
-      handleEndGame(choice, answer)
+      handleVictory(choice, answer)
       dispatch(newRandomQuestion())
     }
   }
 
-  const handleEndGame = (choice: string, answer: string) => {
+  const handleVictory = (choice: string, answer: string): boolean => {
     if (choice === answer) {
-      dispatch(addAnswer(true))
       dispatch(addPoints(100))
-    } else {
-      dispatch(addAnswer(false))
+      dispatch(addAnswer(true))
+      return true
     }
+    dispatch(addAnswer(false))
+    return false
   }
 
   useEffect(() => {
