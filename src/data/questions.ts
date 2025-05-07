@@ -890,5 +890,365 @@ export const questions: QuestionModel[] = [
     choices: ["Carbone", "Hydrogène", "Oxygène", "Azote"],
     answer: "Oxygène",
     explanation: "La photosynthèse produit de l’oxygène comme sous-produit de la conversion du dioxyde de carbone."
+  },
+  {
+    id: "f83f1ae6-f86f-47b5-867e-0c79a2e81b3c",
+    category: "Physique",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel scientifique a découvert la loi de la gravitation universelle ?",
+    choices: ["Galilée", "Einstein", "Newton", "Copernic"],
+    answer: "Newton",
+    explanation: "Isaac Newton a formulé la loi de la gravitation universelle au XVIIe siècle."
+  },
+  {
+    id: "c504e730-1a3a-40a1-a6eb-5e33c6b364d7",
+    category: "Cinéma",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Le film 'Le Parrain' a été réalisé par Martin Scorsese.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "'Le Parrain' a été réalisé par Francis Ford Coppola, pas Martin Scorsese."
+  },
+  {
+    id: "a10fc6d4-9405-4cb2-b6a4-b08dbf623ac2",
+    category: "Culture Générale",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel est le plus ancien alphabet connu ?",
+    choices: ["Alphabet latin", "Alphabet grec", "Alphabet phénicien", "Alphabet arabe"],
+    answer: "Alphabet phénicien",
+    explanation: "L’alphabet phénicien, apparu vers 1050 av. J.-C., est le plus ancien connu à ce jour."
+  },
+  {
+    id: "df85e2e8-dfe4-4c91-b74f-9c5b87aa5082",
+    category: "Littérature",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Qui a écrit 'Les Misérables' ?",
+    choices: ["Victor Hugo", "Émile Zola", "Alphonse Daudet", "Guy de Maupassant"],
+    answer: "Victor Hugo",
+    explanation: "Victor Hugo est l’auteur du roman 'Les Misérables', publié en 1862."
+  },
+  {
+    id: "d82d7a2d-57cb-40ef-84b3-1596612e3d86",
+    category: "Biologie",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Combien d’os composent le squelette humain adulte ?",
+    choices: ["206", "201", "210", "190"],
+    answer: "206",
+    explanation: "Le squelette humain adulte est constitué de 206 os."
+  },
+  {
+    id: "f3938eae-6e4b-4dfc-bd1e-245c364e3ef0",
+    category: "Sport",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quelle nation a remporté le plus de médailles aux Jeux Olympiques d’été ?",
+    choices: ["Russie", "Allemagne", "États-Unis", "Chine"],
+    answer: "États-Unis",
+    explanation: "Les États-Unis sont la nation ayant remporté le plus de médailles dans l’histoire des JO d’été."
+  },
+  {
+    id: "f8c3cc90-c6e5-4b95-8aa5-18c56dbbe3a1",
+    category: "Chimie",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Le symbole chimique du fer est Fe.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "Le fer est représenté par le symbole Fe, issu du latin *ferrum*."
+  },
+  {
+    id: "8d6d1794-1be3-4701-840b-f37c83e8a84d",
+    category: "Informatique",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel langage est principalement utilisé pour développer des applications iOS ?",
+    choices: ["Java", "Kotlin", "Swift", "C#"],
+    answer: "Swift",
+    explanation: "Swift est le langage moderne développé par Apple pour remplacer Objective-C dans le développement iOS."
+  },
+  {
+    id: "13de1647-85ae-4b3e-9de3-00bcfc67faeb",
+    category: "Art",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Qui a peint 'La Nuit étoilée' ?",
+    choices: ["Claude Monet", "Vincent van Gogh", "Paul Cézanne", "Édouard Manet"],
+    answer: "Vincent van Gogh",
+    explanation: "Van Gogh a peint 'La Nuit étoilée' en 1889 depuis l’asile où il était interné."
+  },
+  {
+    id: "ac3b758e-b7f7-42e7-b9c5-b57e7e3561e7",
+    category: "Biologie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel organe du corps humain produit l’insuline ?",
+    choices: ["Le foie", "Le pancréas", "L’estomac", "Les reins"],
+    answer: "Le pancréas",
+    explanation: "Le pancréas produit l’insuline, une hormone essentielle à la régulation du glucose dans le sang."
+  },
+  {
+    id: "99bbbd7a-84cc-49a4-a7b0-f8c0c0e4f812",
+    category: "Histoire",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel traité a mis fin à la Première Guerre mondiale ?",
+    choices: ["Traité de Versailles", "Traité de Tordesillas", "Traité de Rome", "Traité de Paris"],
+    answer: "Traité de Versailles",
+    explanation: "Signé en 1919, le traité de Versailles a officiellement mis fin à la Première Guerre mondiale."
+  },
+  {
+    id: "f9163a2d-1dd2-4c4a-ae9b-712e50b3f0e5",
+    category: "Musique",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel compositeur est connu pour la 'Symphonie n°9' dite 'du Nouveau Monde' ?",
+    choices: ["Mozart", "Dvořák", "Beethoven", "Haydn"],
+    answer: "Dvořák",
+    explanation: "Antonín Dvořák a composé la célèbre 'Symphonie du Nouveau Monde' en 1893."
+  },
+  {
+    id: "6ce48d1f-2747-4b36-a62b-6eecb4ce07ee",
+    category: "Culture Générale",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "La langue la plus parlée au monde est l’anglais.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "Le mandarin est la langue la plus parlée au monde en nombre de locuteurs natifs."
+  },
+  {
+    id: "77659d3f-f5d0-4c91-9d17-0b432ed2025a",
+    category: "Géographie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel est le plus haut sommet d’Afrique ?",
+    choices: ["Kilimandjaro", "Mont Kenya", "Rwenzori", "Simien"],
+    answer: "Kilimandjaro",
+    explanation: "Le Kilimandjaro, situé en Tanzanie, est le point culminant de l’Afrique avec ses 5 895 mètres."
+  },
+  {
+    id: "f342b3e6-0387-45aa-a6f5-e2c2f601c9fd",
+    category: "Informatique",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel système d’exploitation a été développé par Microsoft ?",
+    choices: ["Linux", "Windows", "macOS", "Ubuntu"],
+    answer: "Windows",
+    explanation: "Windows est un système d’exploitation développé par Microsoft depuis 1985."
+  },
+  {
+    id: "58024683-5f86-4d2f-b276-1938df8042fa",
+    category: "Chimie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel gaz est essentiel à la respiration humaine ?",
+    choices: ["Hydrogène", "Oxygène", "Azote", "Carbone"],
+    answer: "Oxygène",
+    explanation: "L’oxygène est le gaz nécessaire à la respiration des cellules humaines."
+  },
+  {
+    id: "5b2bcb94-5e0c-456d-bdf2-10ec3943a742",
+    category: "Littérature",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel personnage est associé à la phrase 'Je suis ton père' ?",
+    choices: ["Dumbledore", "Voldemort", "Dark Vador", "Gandalf"],
+    answer: "Dark Vador",
+    explanation: "Cette phrase emblématique est prononcée par Dark Vador dans 'Star Wars, épisode V'."
+  },
+  {
+    id: "af3f7e55-3532-4db8-9a9e-96786d34c72d",
+    category: "Sciences Sociales",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Moyen",
+    question: "Le PIB est un indicateur du niveau de bonheur dans un pays.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "Le PIB mesure la production économique, mais pas le bien-être ou le bonheur de la population."
+  },
+  {
+    id: "cd39f6c7-8f36-45c4-9c8e-1fd9b9b3030e",
+    category: "Culture Générale",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "La tour Eiffel a été construite pour l'Exposition universelle de 1889.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "La tour Eiffel a été construite pour l'Exposition universelle de Paris en 1889."
+  },
+  {
+    id: "5b38a46d-7cb0-4e6a-b848-79ec56b369f2",
+    category: "Cinéma",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel film a remporté l’Oscar du meilleur film en 1994 ?",
+    choices: ["Forrest Gump", "Pulp Fiction", "The Shawshank Redemption", "Quatre mariages et un enterrement"],
+    answer: "Forrest Gump",
+    explanation: "Forrest Gump a remporté l’Oscar du meilleur film en 1994, avec Tom Hanks dans le rôle principal."
+  },
+  {
+    id: "cf935d29-fd25-4e50-97a7-ef51cfe01301",
+    category: "Biologie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel est le rôle principal des globules rouges ?",
+    choices: ["Combattre les infections", "Transporter l’oxygène", "Produire des hormones", "Digérer les aliments"],
+    answer: "Transporter l’oxygène",
+    explanation: "Les globules rouges transportent l’oxygène des poumons vers les tissus du corps."
+  },
+  {
+    id: "bfcf165a-4325-4a4c-a01a-00b67f6d7d41",
+    category: "Musique",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel compositeur est célèbre pour ses neuf symphonies ?",
+    choices: ["Mozart", "Beethoven", "Bach", "Vivaldi"],
+    answer: "Beethoven",
+    explanation: "Ludwig van Beethoven est connu pour avoir composé neuf symphonies majeures."
+  },
+  {
+    id: "2918d2ff-d870-4b15-b2c1-d5fa624a4c87",
+    category: "Sciences Sociales",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "La sociologie est l’étude des sociétés humaines.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "La sociologie est une discipline qui étudie les comportements et structures sociales humaines."
+  },
+  {
+    id: "a75f18c2-c979-4d90-9a03-0100c186afde",
+    category: "Informatique",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel langage est principalement utilisé pour développer des applications Android ?",
+    choices: ["Java", "Python", "Swift", "Ruby"],
+    answer: "Java",
+    explanation: "Java est le langage principal utilisé pour développer des applications Android."
+  },
+  {
+    id: "dc41f2cf-78b4-46a5-b4a6-e011f1ae5b2d",
+    category: "Littérature",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel est le vrai nom de Voltaire ?",
+    choices: ["François-Marie Arouet", "Jean-Jacques Rousseau", "Denis Diderot", "Charles Baudelaire"],
+    answer: "François-Marie Arouet",
+    explanation: "Voltaire est le nom de plume de François-Marie Arouet, écrivain et philosophe du XVIIIe siècle."
+  },
+  {
+    id: "18c2de78-5f61-4f33-a783-e8a9d66059d2",
+    category: "Géographie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel est le plus grand désert chaud du monde ?",
+    choices: ["Désert de Gobi", "Sahara", "Désert d’Atacama", "Désert du Kalahari"],
+    answer: "Sahara",
+    explanation: "Le Sahara est le plus grand désert chaud du monde, situé en Afrique du Nord."
+  },
+  {
+    id: "7f23b9f1-64f1-4977-83b6-52940e9798e3",
+    category: "Sport",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Combien de points vaut un essai au rugby ?",
+    choices: ["3", "5", "7", "10"],
+    answer: "5",
+    explanation: "Un essai vaut 5 points en rugby, auxquels peuvent s'ajouter 2 points si la transformation est réussie."
+  },
+  {
+    id: "c63a1772-4457-4b9a-b10d-e6d7e16fd94a",
+    category: "Culture Générale",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Moyen",
+    question: "La Terre est plus proche du Soleil en été qu’en hiver.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "Les saisons sont dues à l’inclinaison de la Terre et non à sa distance par rapport au Soleil."
+  },
+  {
+    id: "2cc03e36-7ed7-47df-82b6-2c2e91c008e7",
+    category: "Chimie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel est le symbole chimique de l’or ?",
+    choices: ["Ag", "Au", "Fe", "Pb"],
+    answer: "Au",
+    explanation: "Le symbole chimique de l’or est 'Au', issu du mot latin 'Aurum'."
+  },
+  {
+    id: "ea8fc038-7007-480a-9a63-bb4df53a6a4d",
+    category: "Histoire",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quelle civilisation a construit la cité de Machu Picchu ?",
+    choices: ["Aztèque", "Maya", "Inca", "Olmèque"],
+    answer: "Inca",
+    explanation: "Machu Picchu a été construite par les Incas au XVe siècle dans les Andes péruviennes."
+  },
+  {
+    id: "0937ad23-2f27-43c2-a124-bd655b7f6ed5",
+    category: "Musique",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel artiste est surnommé 'le Roi de la Pop' ?",
+    choices: ["Prince", "Michael Jackson", "Elvis Presley", "Justin Timberlake"],
+    answer: "Michael Jackson",
+    explanation: "Michael Jackson est mondialement reconnu comme 'le Roi de la Pop'."
+  },
+  {
+    id: "763d8657-e7b9-474a-96cf-442cb96e1a29",
+    category: "Biologie",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Les champignons sont des plantes.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "Les champignons ne sont pas des plantes ; ils appartiennent à un règne distinct."
+  },
+  {
+    id: "f6f4d1c0-4ec2-4fbe-9c3c-442f08e318df",
+    category: "Cinéma",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel personnage est célèbre pour la réplique : 'Je suis ton père' ?",
+    choices: ["Yoda", "Dark Vador", "Obi-Wan Kenobi", "Han Solo"],
+    answer: "Dark Vador",
+    explanation: "Dark Vador prononce cette phrase dans 'Star Wars: L’Empire contre-attaque'."
+  },
+  {
+    id: "d3bfa1bc-fc8c-4aa3-b5e4-2f8b4a3c967a",
+    category: "Mathématiques",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Combien de côtés possède un dodécagone ?",
+    choices: ["10", "12", "14", "16"],
+    answer: "12",
+    explanation: "Un dodécagone est un polygone à 12 côtés."
+  },
+  {
+    id: "04f12184-bb8b-4263-b999-bcb0fa9b00bb",
+    category: "Informatique",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel est le nom du créateur de Linux ?",
+    choices: ["Linus Torvalds", "Bill Gates", "Steve Jobs", "Dennis Ritchie"],
+    answer: "Linus Torvalds",
+    explanation: "Linus Torvalds a créé le noyau Linux en 1991, aujourd’hui utilisé dans de nombreux systèmes."
+  },
+  {
+    id: "3b46391a-bd8f-49a4-90f3-3d0ecf76926d",
+    category: "Littérature",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel écrivain a créé le personnage de Sherlock Holmes ?",
+    choices: ["Agatha Christie", "Arthur Conan Doyle", "Jules Verne", "Stephen King"],
+    answer: "Arthur Conan Doyle",
+    explanation: "Le détective Sherlock Holmes est un personnage imaginé par l’auteur britannique Arthur Conan Doyle."
   }
 ]
