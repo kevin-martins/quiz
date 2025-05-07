@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { addAnswer, addPoints, newRandomQuestion } from '../features/gameSlice'
 import { setDifficultyColor, setGameModeColor } from '../helpers/setColors'
 import LadderBoard from './LadderBoard'
-import { setShowExplanation } from '../features/settingsSlice'
+import { setBadAnswerExplanation, setShowExplanation } from '../features/settingsSlice'
 import { useEffect, useState } from 'react'
 
 const Questions = () => {
@@ -15,8 +15,9 @@ const Questions = () => {
   const handleUserChoice = (choice: string, answer: string) => {
     if (showExplanation) {
       const hasWon = handleVictory(choice, answer)
-      if (!hasWon && badAnswerExplanation ) {
-        setExplanationModal(true)
+      if (hasWon && badAnswerExplanation) {
+        setExplanationModal(false)
+        dispatch(newRandomQuestion())
       } else {
         setExplanationModal(true)
       }
@@ -46,8 +47,12 @@ const Questions = () => {
     setExplanationModal(false)
   }
 
-  const handleExplanationValue = (e: any) => {
+  const handleShowExplanationValue = (e: any) => {
     dispatch(setShowExplanation(e.target.checked))
+  }
+
+  const handleBadAnswerExplanationValue = (e: any) => {
+    dispatch(setBadAnswerExplanation(e.target.checked))
   }
 
   return (
@@ -56,28 +61,30 @@ const Questions = () => {
       <span>Difficulté: {difficulties.map(difficulty => <span className={`px-4 py-1 mx-1 ${setDifficultyColor(difficulty)} rounded-lg`}>{difficulty}</span>)}</span>
       <span>Categories: {categories}</span>
       <span>Nombre de questions: {questions.length}</span>
-      <label htmlFor="showExplanation" className='flex items-center gap-2'>
-        Afficher les explications
-        <input
-          id="showExplanation"
-          className='mt-auto mb-1'
-          onChange={handleExplanationValue}
-          type="checkbox"
-          checked={showExplanation}
-        />
+      <div className='flex gap-2'>
+        <label htmlFor="showExplanation" className='flex items-center gap-2'>
+          Afficher les explications
+          <input
+            id="showExplanation"
+            className='mt-auto mb-1'
+            onChange={handleShowExplanationValue}
+            type="checkbox"
+            checked={showExplanation}
+          />
+        </label>
         {showExplanation &&
           <label htmlFor="badAnswerExplanation" className='flex items-center gap-2'>
             seulement en cas de mauvaise réponse
             <input
               id="badAnswerExplanation"
               className='mt-auto mb-1'
-              onChange={handleExplanationValue}
+              onChange={handleBadAnswerExplanationValue}
               type="checkbox"
               checked={badAnswerExplanation}
             />
           </label>
         }
-      </label>
+      </div>
 
       <div className='w-[1024px] m-auto'>
         <div className='flex items-center mb-5'>
