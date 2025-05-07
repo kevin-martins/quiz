@@ -21,7 +21,8 @@ const initialState: SettingsModels = {
     'Sciences Sociales',
     'Sport'
   ],
-  difficulties: ['Facile', 'Moyen']
+  difficulties: ['Facile', 'Moyen'],
+  showExplanation: true
 }
 
 export const settingsSlice = createSlice({
@@ -41,15 +42,15 @@ export const settingsSlice = createSlice({
       const index = state.categories.indexOf(action.payload)
       state.categories.splice(index, 1)
     },
-    setDifficulties: (state, action: PayloadAction<DifficultiesModel[]>) => {
-      state.difficulties = action.payload
-    },
     addDifficulty: (state, action: PayloadAction<DifficultiesModel>) => {
       state.difficulties.push(action.payload)
     },
     removeDifficulty: (state, action: PayloadAction<DifficultiesModel>) => {
       const index = state.difficulties.indexOf(action.payload)
       state.difficulties.splice(index, 1)
+    },
+    setShowExplanation: (state, action: PayloadAction<boolean>) => {
+      state.showExplanation = action.payload
     },
   },
 })
@@ -60,7 +61,7 @@ export const {
   removeCategory,
   addDifficulty,
   removeDifficulty,
-  setDifficulties
+  setShowExplanation
 } = settingsSlice.actions
 
 export default settingsSlice.reducer

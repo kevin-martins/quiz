@@ -690,5 +690,205 @@ export const questions: QuestionModel[] = [
     choices: ["Mozart", "Beethoven", "Chopin", "Bach"],
     answer: "Beethoven",
     explanation: "Ludwig van Beethoven a composé neuf célèbres symphonies, dont la Neuvième avec l’Ode à la Joie."
+  },
+  {
+    id: "38bc14d7-23e2-4be4-8e3c-34846e083ace",
+    category: "Littérature",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel auteur a écrit 'Les Misérables' ?",
+    choices: ["Émile Zola", "Victor Hugo", "Gustave Flaubert", "Albert Camus"],
+    answer: "Victor Hugo",
+    explanation: "'Les Misérables' est un roman emblématique de Victor Hugo, publié en 1862."
+  },
+  {
+    id: "0d203bd9-fef0-4173-b5e3-ea2db41fc0f3",
+    category: "Physique",
+    gameMode: "Classique",
+    difficulty: "Expert",
+    question: "Quelle est la formule de l’énergie cinétique ?",
+    choices: ["E = mc²", "E = ½mv²", "E = mgh", "E = Fd"],
+    answer: "E = ½mv²",
+    explanation: "L’énergie cinétique d’un objet est calculée avec la formule E = ½mv², où m est la masse et v la vitesse."
+  },
+  {
+    id: "ecf91ec2-c694-4b6d-a579-f35c86cd31fa",
+    category: "Culture Générale",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Le fromage roquefort est fabriqué à base de lait de vache.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "Le roquefort est un fromage à base de lait de brebis."
+  },
+  {
+    id: "22f25cfc-e1b7-457b-b7e7-11f6bafc3cd4",
+    category: "Mathématiques",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Combien vaut la somme des angles d’un triangle ?",
+    choices: ["90°", "180°", "270°", "360°"],
+    answer: "180°",
+    explanation: "La somme des angles d’un triangle est toujours égale à 180 degrés."
+  },
+  {
+    id: "0e2d27df-39c3-422e-bd36-621e9a07d708",
+    category: "Cinéma",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel film a remporté l’Oscar du meilleur film en 1994 ?",
+    choices: ["Pulp Fiction", "Forrest Gump", "The Shawshank Redemption", "Quatre mariages et un enterrement"],
+    answer: "Forrest Gump",
+    explanation: "'Forrest Gump' a remporté l’Oscar du meilleur film en 1994."
+  },
+  {
+    id: "a765e763-88b7-4f21-9947-e2a63f7c376e",
+    category: "Biologie",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel est le nom de la molécule qui transporte l’oxygène dans le sang ?",
+    choices: ["Insuline", "Hémoglobine", "Chlorophylle", "Adénosine"],
+    answer: "Hémoglobine",
+    explanation: "L’hémoglobine est la protéine des globules rouges qui transporte l’oxygène dans le sang."
+  },
+  {
+    id: "1ffef47b-5e1e-4997-9a93-f1b9b7790bd7",
+    category: "Informatique",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel langage est principalement utilisé pour le développement web côté client ?",
+    choices: ["Python", "Java", "JavaScript", "C++"],
+    answer: "JavaScript",
+    explanation: "JavaScript est le langage de script utilisé pour rendre les pages web interactives côté client."
+  },
+  {
+    id: "fdf2f254-00c4-4603-8d40-169ae790cb79",
+    category: "Sport",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Le Tour de France est une compétition de ski.",
+    choices: ["Vrai", "Faux"],
+    answer: "Faux",
+    explanation: "Le Tour de France est une célèbre course cycliste qui a lieu chaque été."
+  },
+  {
+    id: "6a9bd537-2958-4065-b0cc-b7635e9cb2e7",
+    category: "Chimie",
+    gameMode: "Classique",
+    difficulty: "Expert",
+    question: "Quel est le numéro atomique du carbone ?",
+    choices: ["6", "8", "12", "14"],
+    answer: "6",
+    explanation: "Le carbone a pour symbole C et son numéro atomique est 6."
+  },
+  {
+    id: "e07364eb-0dc9-4c91-91e4-e02dc9a3a017",
+    category: "Géographie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quelle est la capitale de l’Australie ?",
+    choices: ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+    answer: "Canberra",
+    explanation: "Contrairement à une idée reçue, la capitale de l’Australie est Canberra et non Sydney."
+  },
+  {
+    id: "b58d4be4-7262-4df9-a37d-7f27b1d21645",
+    category: "Musique",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Qui est le chanteur principal du groupe U2 ?",
+    choices: ["Bono", "Sting", "Mick Jagger", "Freddie Mercury"],
+    answer: "Bono",
+    explanation: "Bono est le chanteur principal du groupe de rock irlandais U2."
+  },
+  {
+    id: "ef1a3cc3-61ee-4433-a9e3-8993d117b3e6",
+    category: "Art",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "La Joconde est exposée au Louvre.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "La Joconde, peinte par Léonard de Vinci, est exposée au musée du Louvre à Paris."
+  },
+  {
+    id: "73d9c4d2-b597-43b4-b5f9-514f10b994e2",
+    category: "Sciences Sociales",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel philosophe est l’auteur du 'Contrat social' ?",
+    choices: ["John Locke", "Voltaire", "Jean-Jacques Rousseau", "Montesquieu"],
+    answer: "Jean-Jacques Rousseau",
+    explanation: "Rousseau a écrit 'Du contrat social', une œuvre majeure sur la démocratie et la souveraineté du peuple."
+  },
+  {
+    id: "8451970f-62df-4d73-9f38-3e5e4d91d99e",
+    category: "Histoire",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Quel célèbre mur est tombé en 1989 ?",
+    choices: ["Mur d’Atlantique", "Mur de Berlin", "Mur des Lamentations", "Mur de Chine"],
+    answer: "Mur de Berlin",
+    explanation: "Le Mur de Berlin est tombé en 1989, marquant la fin de la division entre l’Est et l’Ouest de l’Allemagne."
+  },
+  {
+    id: "2fa6e9a0-cd3f-49b7-9185-15ea119a6a47",
+    category: "Biologie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel organe produit l’insuline dans le corps humain ?",
+    choices: ["Le foie", "Le pancréas", "L’estomac", "Les reins"],
+    answer: "Le pancréas",
+    explanation: "L’insuline est produite par le pancréas pour réguler le taux de sucre dans le sang."
+  },
+  {
+    id: "c4d05d4e-f2c2-4f10-aace-f1a3a981ddfc",
+    category: "Culture Générale",
+    gameMode: "Classique",
+    difficulty: "Facile",
+    question: "Combien y a-t-il de continents sur Terre ?",
+    choices: ["5", "6", "7", "8"],
+    answer: "7",
+    explanation: "Les 7 continents sont : l’Europe, l’Asie, l’Afrique, l’Amérique du Nord, l’Amérique du Sud, l’Océanie et l’Antarctique."
+  },
+  {
+    id: "cf4f7792-161c-4e80-8f8e-f3e0f08356d7",
+    category: "Informatique",
+    gameMode: "Vrai ou Faux",
+    difficulty: "Facile",
+    question: "Linux est un système d’exploitation.",
+    choices: ["Vrai", "Faux"],
+    answer: "Vrai",
+    explanation: "Linux est un système d’exploitation libre et open source utilisé dans de nombreux domaines informatiques."
+  },
+  {
+    id: "ec429aa2-5389-4c8e-8b8c-37b4901d18d1",
+    category: "Mathématiques",
+    gameMode: "Classique",
+    difficulty: "Difficile",
+    question: "Quel est le nombre premier immédiatement supérieur à 100 ?",
+    choices: ["101", "103", "107", "109"],
+    answer: "101",
+    explanation: "101 est le plus petit nombre premier strictement supérieur à 100."
+  },
+  {
+    id: "73cbe152-e0c1-4dcd-a0d5-b5c445f4786f",
+    category: "Sport",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel joueur de tennis a remporté le plus de tournois du Grand Chelem en simple ?",
+    choices: ["Roger Federer", "Rafael Nadal", "Novak Djokovic", "Pete Sampras"],
+    answer: "Novak Djokovic",
+    explanation: "Novak Djokovic détient le record du nombre de titres en Grand Chelem en simple chez les hommes."
+  },
+  {
+    id: "39436a10-9494-4348-a022-6213d2c14f3f",
+    category: "Chimie",
+    gameMode: "Classique",
+    difficulty: "Moyen",
+    question: "Quel gaz est produit lors de la photosynthèse ?",
+    choices: ["Carbone", "Hydrogène", "Oxygène", "Azote"],
+    answer: "Oxygène",
+    explanation: "La photosynthèse produit de l’oxygène comme sous-produit de la conversion du dioxyde de carbone."
   }
 ]

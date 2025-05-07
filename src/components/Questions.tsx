@@ -1,17 +1,23 @@
 import { RootState } from '../app/store'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { addAnswer, addPoints, newRandomQuestion } from '../features/gameSlice'
-import { getAllQuestionsById, setDifficultyColor, setGameModeColor } from '../helpers/helpers'
-import { LadderBoardType } from '../models/ladderBoard'
-import { useState } from 'react'
+import { setDifficultyColor, setGameModeColor } from '../helpers/setColors'
 import LadderBoard from './LadderBoard'
+import { setShowExplanation } from '../features/settingsSlice'
+import { useState } from 'react'
 
 const Questions = () => {
-  const { categories, difficulties, gameMode } = useAppSelector((state: RootState) => state.settings)
-  const { questions, currentQuestion, points, answers } = useAppSelector((state: RootState) => state.game)
+  const { categories, difficulties, gameMode, showExplanation } = useAppSelector((state: RootState) => state.settings)
+  const { questions, currentQuestion, points } = useAppSelector((state: RootState) => state.game)
+  const [explanationModal, setExplanationModal] = useState<boolean>(false)
   const dispatch = useAppDispatch()
 
   const handleUserChoice = (choice: string, answer: string) => {
+    if (showExplanation) {
+      //close the show to generate the next question 
+    } else {
+
+    }
     if (choice === answer) {
       dispatch(addAnswer(true))
       dispatch(addPoints(100))
@@ -21,14 +27,26 @@ const Questions = () => {
     dispatch(newRandomQuestion())
   }
 
+  const handleOpenExplanationModal = () => {
+    setExplanationModal(true)
+  }
+
+  const handleCloseExplanationModal = () => {
+    setExplanationModal(false)
+  }
+
+  const handleExplanationValue = (e: any) => {
+    dispatch(setShowExplanation(e.target.checked))
+  }
   return (
-    <div className='flex flex-col gap-4'>
+    <div className='flex flex-col gap-2'>
       <span>Mode de jeu: {gameMode}</span>
       <span>Difficulté: {difficulties.map(difficulty => <span className={`px-4 py-1 mx-1 ${setDifficultyColor(difficulty)} rounded-lg`}>{difficulty}</span>)}</span>
       <span>Categories: {categories}</span>
       <span>Nombre de questions: {questions.length}</span>
+      <input onChange={handleExplanationValue} type="checkbox" />
 
-      <div className='w-[1024px] m-auto'>
+      <div className='w-[1024px] m-auto relative'>
         <div className='flex items-center mb-5'>
           <h2 className='text-5xl pr-4'>{currentQuestion.category}</h2>
           <div className='flex flex-row gap-2 mt-auto text-sm'>
@@ -51,6 +69,19 @@ const Questions = () => {
             ))}
           </div>
         </div>
+        {explanationModal && showExplanation &&
+          <div className='absolute z-50 border-[2px] border-gray-100 rounded-lg p-2 top-1/2 right-1/2 translate-x-1/2 translate-y-1/2 bg-white'>
+            <button
+              onClick={handleCloseExplanationModal}
+              className='ml-auto float-right cursor-pointer'
+            >
+              &#10060;
+            </button>
+            <p>
+              {currentQuestion.explanation}
+            </p>
+          </div>
+        }
       </div>
       <LadderBoard />
     </div>

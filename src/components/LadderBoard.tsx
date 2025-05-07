@@ -2,7 +2,9 @@ import { useState } from "react";
 import { useAppSelector } from "../app/hooks";
 import { RootState } from "../app/store";
 import { LadderBoardType } from "../models/ladderBoard";
-import { getAllQuestionsById, setDifficultyColor } from "../helpers/helpers";
+import { getAllQuestionsById } from "../helpers/helpers";
+import { setDifficultyColor } from "../helpers/setColors";
+
 
 const LadderBoard = () => {
   const { questions, answers } = useAppSelector((state: RootState) => state.game)

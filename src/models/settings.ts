@@ -5,5 +5,6 @@ import { GameModesModel } from "./gameModes"
 export type SettingsModels = {
   gameMode: GameModesModel
   categories: CategoriesModel[],
-  difficulties: DifficultiesModel[]
+  difficulties: DifficultiesModel[],
+  showExplanation: boolean
 }
