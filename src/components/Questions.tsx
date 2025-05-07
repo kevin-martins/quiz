@@ -48,15 +48,16 @@ const Questions = () => {
   const handleExplanationValue = (e: any) => {
     dispatch(setShowExplanation(e.target.checked))
   }
+
   return (
     <div className='flex flex-col gap-2'>
       <span>Mode de jeu: {gameMode}</span>
       <span>Difficulté: {difficulties.map(difficulty => <span className={`px-4 py-1 mx-1 ${setDifficultyColor(difficulty)} rounded-lg`}>{difficulty}</span>)}</span>
       <span>Categories: {categories}</span>
       <span>Nombre de questions: {questions.length}</span>
-      <input onChange={handleExplanationValue} type="checkbox" />
+      <input onChange={handleExplanationValue} type="checkbox" checked={showExplanation} />
 
-      <div className='w-[1024px] m-auto relative'>
+      <div className='w-[1024px] m-auto'>
         <div className='flex items-center mb-5'>
           <h2 className='text-5xl pr-4'>{currentQuestion.category}</h2>
           <div className='flex flex-row gap-2 mt-auto text-sm'>
@@ -80,17 +81,25 @@ const Questions = () => {
           </div>
         </div>
         {(explanationModal && showExplanation) &&
-          <div className='absolute w-[550px] shadow-xl z-50 border-[2px] border-gray-100 rounded-lg p-2 top-1/2 right-1/2 translate-x-1/2 translate-y-1/2 bg-white'>
-            <button
-              onClick={handleCloseExplanationModal}
-              className='ml-auto float-right cursor-pointer'
+          <div
+            onClick={handleCloseExplanationModal}
+            className='fixed w-full h-screen bg-black/50 z-50 top-0 left-0 cursor-pointer'
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className='absolute w-[600px] rounded-lg p-1 top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 bg-white cursor-default'
             >
-              &#10060;
-            </button>
-            <p>
-              {currentQuestion.explanation}
-            </p>
-            <button onClick={handleCloseExplanationModal} className='bg-blue-300 hover:bg-blue-400 cursor-pointer rounded-lg w-44 m-auto py-1'>Ok</button>
+              <button
+                onClick={handleCloseExplanationModal}
+                className='float-right cursor-pointer hover:text-red-500 duration-300 hover:rotate-90'
+              >
+                &#10060;
+              </button>
+              <p className='p-1 m-1'>
+                {currentQuestion.explanation}
+              </p>
+              <button onClick={handleCloseExplanationModal} className='bg-blue-300 hover:bg-blue-400 cursor-pointer rounded-lg w-44 py-1 mt-3 mb-1 ml-1'>Ok</button>
+            </div>
           </div>
         }
       </div>
