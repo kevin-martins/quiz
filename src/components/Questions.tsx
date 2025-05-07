@@ -55,7 +55,10 @@ const Questions = () => {
       <span>Difficulté: {difficulties.map(difficulty => <span className={`px-4 py-1 mx-1 ${setDifficultyColor(difficulty)} rounded-lg`}>{difficulty}</span>)}</span>
       <span>Categories: {categories}</span>
       <span>Nombre de questions: {questions.length}</span>
-      <input onChange={handleExplanationValue} type="checkbox" checked={showExplanation} />
+      <label htmlFor="showExplanation" className='flex items-center gap-2'>
+        Afficher les explications
+        <input id="showExplanation" onChange={handleExplanationValue} type="checkbox" checked={showExplanation} />
+      </label>
 
       <div className='w-[1024px] m-auto'>
         <div className='flex items-center mb-5'>
