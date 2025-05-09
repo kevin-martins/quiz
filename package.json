@@ -1,6 +1,7 @@
 {
   "name": "quiz",
   "version": "0.1.0",
+  "homepage": "https://kevin-martins.github.io/quiz",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.7.0",
