@@ -6,7 +6,7 @@ import { getAllQuestionsById } from "../helpers/helpers";
 import { setDifficultyColor } from "../helpers/setColors";
 import { QuestionModel } from "../models/questions";
 import { AnswersModel } from "../models/answers";
-import { Chart } from "chart.js/auto";
+// import { Chart } from "chart.js/auto";
 
 const PieChart = ({ data }: {data: any}) => {
   const dataPie = {
@@ -31,7 +31,7 @@ const PieChart = ({ data }: {data: any}) => {
     options: {},
   };
   
-  var chartBar = new Chart(document.getElementById("chartPie"), configPie);
+  // var chartBar = new Chart(document.getElementById("chartPie"), configPie);
   return (
     <div className="max-w-sm w-full bg-white rounded-lg shadow-sm dark:bg-gray-800 p-4 md:p-6">
       <div className="py-3 px-5 bg-gray-50">Pie chart</div>
