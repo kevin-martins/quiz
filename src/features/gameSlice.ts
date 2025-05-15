@@ -6,6 +6,7 @@ import { AnswersModel } from '../models/answers'
 
 export interface InitialState {
   questions: QuestionModel[],
+  filteredQuestions: QuestionModel[],
   currentQuestion: QuestionModel,
   answers: AnswersModel[],
   points: number
@@ -13,6 +14,7 @@ export interface InitialState {
 
 const initialState: InitialState = {
   questions,
+  filteredQuestions: questions,
   currentQuestion: questions[getRandomNumber(questions.length)],
   answers: [],
   points: 0
@@ -25,8 +27,15 @@ export const gameSlice = createSlice({
     setQuestions: (state, action: PayloadAction<QuestionModel[]>) => {
       state.questions = action.payload
     },
-    newRandomQuestion: (state) => {
-      state.currentQuestion = state.questions[getRandomNumber(state.questions.length)]
+    setFilteredQuestions: (state, action: PayloadAction<QuestionModel[]>) => {
+      state.filteredQuestions = action.payload
+    },
+    setCurrentQuestion: (state) => {
+      let randomQuestion = state.filteredQuestions[getRandomNumber(state.filteredQuestions.length)]
+      while (state.answers.some(answer => randomQuestion.id === answer.id)) {
+        randomQuestion = state.filteredQuestions[getRandomNumber(state.filteredQuestions.length)]
+      }
+      state.currentQuestion = randomQuestion
     },
     addAnswer: (state, action: PayloadAction<boolean>) => {
       state.answers.push({
@@ -42,7 +51,8 @@ export const gameSlice = createSlice({
 
 export const {
   setQuestions,
-  newRandomQuestion,
+  setFilteredQuestions,
+  setCurrentQuestion,
   addAnswer,
   addPoints
 } = gameSlice.actions

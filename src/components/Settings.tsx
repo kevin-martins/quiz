@@ -9,7 +9,7 @@ import { difficulties } from '../data/difficulties'
 import { gameModes } from '../data/gameModes'
 import { GameModesModel } from '../models/gameModes'
 import { filterQuestions } from '../helpers/helpers'
-import { setQuestions } from '../features/gameSlice'
+import { setCurrentQuestion, setFilteredQuestions, setQuestions } from '../features/gameSlice'
 
 const Categories = () => {
   const selectedCategories: CategoriesModel[] = useAppSelector((state: RootState) => state.settings.categories)
@@ -147,8 +147,9 @@ const Settings = () => {
 
   const handleStartGame = () => {
     setOpen(false)
-    const questions = filterQuestions(settings)
-    dispatch(setQuestions(questions))
+    const filteredQuestions = filterQuestions(settings)
+    dispatch(setCurrentQuestion())
+    dispatch(setFilteredQuestions(filteredQuestions))
   }
 
   return (
