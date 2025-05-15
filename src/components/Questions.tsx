@@ -4,12 +4,14 @@ import { addAnswer, addPoints, setCurrentQuestion } from '../features/gameSlice'
 import { setDifficultyColor, setGameModeColor } from '../helpers/setColors'
 import LadderBoard from './LadderBoard'
 import { setBadAnswerExplanation, setShowExplanation } from '../features/settingsSlice'
-import { useEffect, useState } from 'react'
+import { use, useEffect, useState } from 'react'
+import { getRandomNumber } from '../helpers/helpers'
 
 const Questions = () => {
   const { categories, difficulties, gameMode, showExplanation, badAnswerExplanation } = useAppSelector((state: RootState) => state.settings)
   const { questions, filteredQuestions, currentQuestion, points } = useAppSelector((state: RootState) => state.game)
   const [explanationModal, setExplanationModal] = useState<boolean>(false)
+  const [randomNumber, setRandomNumber] = useState<number | null>(null)
   const dispatch = useAppDispatch()
 
   const handleUserChoice = (choice: string, answer: string) => {
@@ -55,6 +57,12 @@ const Questions = () => {
     dispatch(setBadAnswerExplanation(e.target.checked))
   }
 
+  useEffect(() => {
+    if (gameMode === "Masqué" && currentQuestion) {
+      setRandomNumber(getRandomNumber(currentQuestion.choices.length))
+    }
+  }, [currentQuestion])
+
   return (
     <div className='flex flex-col gap-2'>
       <span>Mode de jeu: {gameMode}</span>
@@ -88,33 +96,34 @@ const Questions = () => {
       </div>
 
       <div className='w-[1024px] m-auto'>
-        {currentQuestion ?
-          <>
-            <div className='flex items-center mb-5'>
-              <h2 className='text-5xl pr-4'>{currentQuestion.category}</h2>
-              <div className='flex flex-row gap-2 mt-auto text-sm'>
-                <p className={`px-4 py-1 rounded-lg ${setGameModeColor(currentQuestion.gameMode)}`}>{currentQuestion.gameMode}</p>
-                <p className={`px-4 py-1 rounded-lg ${setDifficultyColor(currentQuestion.difficulty)}`}>{currentQuestion.difficulty}</p>
+        {currentQuestion
+          ? <>
+              <div className='flex items-center mb-5'>
+                <h2 className='text-5xl pr-4'>{currentQuestion.category}</h2>
+                <div className='flex flex-row gap-2 mt-auto text-sm'>
+                  <p className={`px-4 py-1 rounded-lg ${setGameModeColor(currentQuestion.gameMode)}`}>{currentQuestion.gameMode}</p>
+                  <p className={`px-4 py-1 rounded-lg ${setDifficultyColor(currentQuestion.difficulty)}`}>{currentQuestion.difficulty}</p>
+                </div>
+                <span className='text-xl ml-auto bg-yellow-200 px-2 mt-auto py-1 rounded-lg'>{points} $</span>
               </div>
-              <span className='text-xl ml-auto bg-yellow-200 px-2 mt-auto py-1 rounded-lg'>{points} $</span>
-            </div>
-            <div>
-              <h2 className='text-lg'>{currentQuestion.question}</h2>
-              <div className='grid grid-cols-2 gap-5 mt-2'>
-                {currentQuestion.choices.map((choice: string) => (
-                  <button
-                    key={choice}
-                    onClick={() => handleUserChoice(choice, currentQuestion.answer)}
-                    className='bg-blue-300 py-4 rounded-lg hover:bg-blue-400 cursor-pointer'
-                  >
-                    {choice}
-                  </button>
-                ))}
+              <div>
+                <h2 className='text-lg'>{currentQuestion.question}</h2>
+                <div className='grid grid-cols-2 gap-5 mt-2'>
+                  {currentQuestion.choices.map((choice: string, i: number) => (
+                    <button
+                      key={choice}
+                      onClick={() => handleUserChoice(choice, currentQuestion.answer)}
+                      className='bg-blue-300 py-4 rounded-lg hover:bg-blue-400 cursor-pointer'
+                    >
+                      {gameMode === "Masqué" && i === randomNumber ? "Autre" : choice}
+                    </button>
+                  ))}
+                </div>
               </div>
+            </>
+          : <div className='flex flex-col items-center justify-center h-screen'>
+              Aucune question disponible, changer les paramètres pour en avoir plus
             </div>
-          </>
-          :
-          <div className='flex flex-col items-center justify-center h-screen'></div>
         }
         {(explanationModal && showExplanation) &&
           <div

@@ -16,6 +16,21 @@ export const getGameModeDescription = {
 export const filterQuestions = (settings: SettingsModels): QuestionModel[] => {
   const { categories, difficulties, gameMode } = settings
 
+  if (gameMode === "Masqué") {
+    return questions.filter(question =>
+      categories.includes(question.category) &&
+      difficulties.includes(question.difficulty) &&
+      question.gameMode === "Classique"
+    )
+  }
+
+  if (gameMode === "Sans faute") {
+    return questions.filter(question =>
+      categories.includes(question.category) &&
+      difficulties.includes(question.difficulty)
+    )
+  }
+
   return questions.filter(question =>
     categories.includes(question.category) &&
     difficulties.includes(question.difficulty) &&
