@@ -108,8 +108,8 @@ export const questions: QuestionModel[] = [
     difficulty: "Facile",
     question: "Quel est le plus long fleuve du monde ?",
     choices: ["Nil", "Amazone", "Yangtsé", "Mississippi"],
-    answer: "Amazone",
-    explanation: "L’Amazone est considéré comme le fleuve le plus long du monde, avec environ 7 000 km, devant le Nil selon les dernières études."
+    answer: "Nil",
+    explanation: "Le Nil est le plus long fleuve du monde avec 6 650 km."
   },
   {
     id: "c2a0671a-4fc1-4f45-ae0f-b96b23714cf3",
@@ -649,7 +649,7 @@ export const questions: QuestionModel[] = [
     question: "Quel philosophe a écrit 'Le Contrat social' ?",
     choices: ["Voltaire", "Montesquieu", "Jean-Jacques Rousseau", "Diderot"],
     answer: "Jean-Jacques Rousseau",
-    explanation: "'Le Contrat social' est une œuvre politique majeure écrite par Rousseau en 1762."
+    explanation: "'Le Contrat social' est une œuvre politique majeure sur la démocratie et la souveraineté du peuple écrit par Rousseau en 1762."
   },
   {
     id: "3b3ffb60-193f-4e0e-8e61-0d7a3605c2c1",
@@ -800,16 +800,6 @@ export const questions: QuestionModel[] = [
     choices: ["Vrai", "Faux"],
     answer: "Vrai",
     explanation: "La Joconde, peinte par Léonard de Vinci, est exposée au musée du Louvre à Paris."
-  },
-  {
-    id: "73d9c4d2-b597-43b4-b5f9-514f10b994e2",
-    category: "Sciences Sociales",
-    gameMode: "Classique",
-    difficulty: "Difficile",
-    question: "Quel philosophe est l’auteur du 'Contrat social' ?",
-    choices: ["John Locke", "Voltaire", "Jean-Jacques Rousseau", "Montesquieu"],
-    answer: "Jean-Jacques Rousseau",
-    explanation: "Rousseau a écrit 'Du contrat social', une œuvre majeure sur la démocratie et la souveraineté du peuple."
   },
   {
     id: "8451970f-62df-4d73-9f38-3e5e4d91d99e",
@@ -1240,5 +1230,55 @@ export const questions: QuestionModel[] = [
     choices: ["Agatha Christie", "Arthur Conan Doyle", "Jules Verne", "Stephen King"],
     answer: "Arthur Conan Doyle",
     explanation: "Le détective Sherlock Holmes est un personnage imaginé par l’auteur britannique Arthur Conan Doyle."
+  },
+  {
+  id: "17cf38ae-fd20-4f27-8bd2-16eaa909a321",
+  category: "Géographie",
+  gameMode: "Trouve l'erreur",
+  difficulty: "Moyen",
+  question: "Lequel de ces pays ne fait pas partie de l'Union européenne ?",
+  choices: ["Espagne", "Pologne", "Norvège", "Italie"],
+  answer: "Norvège",
+  explanation: "La Norvège ne fait pas partie de l’Union européenne, contrairement à l’Espagne, l’Italie et la Pologne."
+  },
+  {
+    id: "3d2ebfaa-6e10-45b4-9780-7b6391e2cf6e",
+    category: "Sciences Sociales",
+    gameMode: "Trouve l'erreur",
+    difficulty: "Facile",
+    question: "Lequel de ces droits n’est pas un droit fondamental de l’homme selon la Déclaration universelle des droits de l’homme ?",
+    choices: ["Droit à la vie", "Droit à l'éducation", "Droit de vote pour les animaux", "Droit à la liberté"],
+    answer: "Droit de vote pour les animaux",
+    explanation: "La Déclaration universelle des droits de l’homme ne fait aucunement mention du droit de vote pour les animaux."
+  },
+  {
+    id: "b064b50f-7f85-4b8e-9a7f-0f1f45c132f2",
+    category: "Physique",
+    gameMode: "Trouve l'erreur",
+    difficulty: "Difficile",
+    question: "Laquelle de ces particules n’est pas un fermion ?",
+    choices: ["Électron", "Neutrino", "Proton", "Photon"],
+    answer: "Photon",
+    explanation: "Le photon est un boson, tandis que l’électron, le neutrino et le proton sont des fermions."
+  },
+  {
+    id: "b715254b-1c9e-4cf3-a161-b3a8195f9306",
+    category: "Informatique",
+    gameMode: "Trouve l'erreur",
+    difficulty: "Moyen",
+    question: "Lequel de ces langages n’est pas utilisé pour le développement web ?",
+    choices: ["HTML", "CSS", "Python", "Photoshop"],
+    answer: "Photoshop",
+    explanation: "Photoshop est un logiciel de graphisme, pas un langage de programmation pour le web."
+  },
+  {
+    id: "abf0c8b9-0142-4c18-b6c3-348fc1f6bff5",
+    category: "Histoire",
+    gameMode: "Trouve l'erreur",
+    difficulty: "Moyen",
+    question: "Laquelle de ces personnalités n’a pas été un président de la République française ?",
+    choices: ["François Mitterrand", "Charles de Gaulle", "Jacques Chirac", "Napoléon Bonaparte"],
+    answer: "Napoléon Bonaparte",
+    explanation: "Napoléon Bonaparte était empereur, et non président de la République française."
   }
 ]
