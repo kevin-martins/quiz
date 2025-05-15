@@ -1,6 +1,6 @@
 import { RootState } from '../app/store'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
-import { addAnswer, addPoints, newRandomQuestion } from '../features/gameSlice'
+import { addAnswer, addPoints, setCurrentQuestion } from '../features/gameSlice'
 import { setDifficultyColor, setGameModeColor } from '../helpers/setColors'
 import LadderBoard from './LadderBoard'
 import { setBadAnswerExplanation, setShowExplanation } from '../features/settingsSlice'
@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 
 const Questions = () => {
   const { categories, difficulties, gameMode, showExplanation, badAnswerExplanation } = useAppSelector((state: RootState) => state.settings)
-  const { questions, currentQuestion, points } = useAppSelector((state: RootState) => state.game)
+  const { questions, filteredQuestions, currentQuestion, points } = useAppSelector((state: RootState) => state.game)
   const [explanationModal, setExplanationModal] = useState<boolean>(false)
   const dispatch = useAppDispatch()
 
@@ -17,13 +17,13 @@ const Questions = () => {
       const hasWon = handleVictory(choice, answer)
       if (hasWon && badAnswerExplanation) {
         setExplanationModal(false)
-        dispatch(newRandomQuestion())
+        dispatch(setCurrentQuestion())
       } else {
         setExplanationModal(true)
       }
     } else {
       handleVictory(choice, answer)
-      dispatch(newRandomQuestion())
+      dispatch(setCurrentQuestion())
     }
   }
 
@@ -39,7 +39,7 @@ const Questions = () => {
 
   useEffect(() => {
     if (showExplanation && !explanationModal) {
-      dispatch(newRandomQuestion())
+      dispatch(setCurrentQuestion())
     }
   }, [explanationModal])
 
@@ -61,6 +61,7 @@ const Questions = () => {
       <span>Difficulté: {difficulties.map(difficulty => <span className={`px-4 py-1 mx-1 ${setDifficultyColor(difficulty)} rounded-lg`}>{difficulty}</span>)}</span>
       <span>Categories: {categories}</span>
       <span>Nombre de questions: {questions.length}</span>
+      <span>Questions filtrées: {filteredQuestions.length}</span>
       <div className='flex gap-2'>
         <label htmlFor="showExplanation" className='flex items-center gap-2'>
           Afficher les explications
