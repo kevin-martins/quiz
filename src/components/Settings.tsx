@@ -148,8 +148,8 @@ const Settings = () => {
   const handleStartGame = () => {
     setOpen(false)
     const filteredQuestions = filterQuestions(settings)
-    dispatch(setCurrentQuestion())
     dispatch(setFilteredQuestions(filteredQuestions))
+    dispatch(setCurrentQuestion())
   }
 
   return (
