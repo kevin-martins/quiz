@@ -64,14 +64,14 @@ const StatisticsBoard = ({ answers }: StatisticsBoardProps) => {
 }
 
 type AnswersBoardProps = {
-  questions: QuestionModel[]
+  filteredQuestions: QuestionModel[]
   answers: AnswersModel[]
 }
 
-const AnswersBoard = ({ questions, answers }: AnswersBoardProps) => {
+const AnswersBoard = ({ filteredQuestions, answers }: AnswersBoardProps) => {
   return (
     <div className='flex flex-col gap-[2px]'>
-      {getAllQuestionsById(questions, answers).map((answer) => {
+      {getAllQuestionsById(filteredQuestions, answers).map((answer) => {
         return (
           <div key={answer.id} className='grid grid-cols-8 gap-1'>
             <p className={`px-4 py-1 rounded-lg text-center ${setDifficultyColor(answer.difficulty)}`}>{answer.difficulty}</p>
@@ -88,7 +88,7 @@ const AnswersBoard = ({ questions, answers }: AnswersBoardProps) => {
 }
 
 const LadderBoard = () => {
-  const { questions, answers } = useAppSelector((state: RootState) => state.game)
+  const { filteredQuestions, answers } = useAppSelector((state: RootState) => state.game)
   const [ladderBoard, setLadderBoard] = useState<LadderBoardType>(LadderBoardType.ANSWERS)
 
   return (
@@ -110,7 +110,7 @@ const LadderBoard = () => {
         </button>
       </div>
       {ladderBoard === LadderBoardType.ANSWERS &&
-        <AnswersBoard questions={questions} answers={answers} />
+        <AnswersBoard filteredQuestions={filteredQuestions} answers={answers} />
       }
       {ladderBoard === LadderBoardType.STATISTICS &&
         <StatisticsBoard answers={answers} />
