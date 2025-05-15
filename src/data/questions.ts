@@ -322,16 +322,6 @@ export const questions: QuestionModel[] = [
     explanation: "Mozart était un compositeur du XVIIIe siècle, principalement associé à la période classique."
   },
   {
-    id: "e2c12df4-7c76-43dc-a13b-0c47233d435b",
-    category: "Sciences Sociales",
-    gameMode: "Classique",
-    difficulty: "Moyen",
-    question: "Quel philosophe a écrit 'Le Contrat Social' ?",
-    choices: ["Voltaire", "Montesquieu", "Rousseau", "Descartes"],
-    answer: "Rousseau",
-    explanation: "Jean-Jacques Rousseau a écrit 'Du contrat social' en 1762, une œuvre majeure de la philosophie politique."
-  },
-  {
     id: "b155d997-1292-4964-a1b5-bbe4776ac85e",
     category: "Biologie",
     gameMode: "Classique",
