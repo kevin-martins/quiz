@@ -11,6 +11,8 @@ export const setGameModeColor = (gameMode: GameModesModel) => {
       return "bg-indigo-300"
     case "Vrai ou Faux":
       return "bg-lime-300"
+    case "Trouve l'erreur":
+      return "bg-rose-300"
     case "Survie":
       return "bg-cyan-300"
     case "Masqué":
