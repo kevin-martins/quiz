@@ -88,28 +88,34 @@ const Questions = () => {
       </div>
 
       <div className='w-[1024px] m-auto'>
-        <div className='flex items-center mb-5'>
-          <h2 className='text-5xl pr-4'>{currentQuestion.category}</h2>
-          <div className='flex flex-row gap-2 mt-auto text-sm'>
-            <p className={`px-4 py-1 rounded-lg ${setGameModeColor(currentQuestion.gameMode)}`}>{currentQuestion.gameMode}</p>
-            <p className={`px-4 py-1 rounded-lg ${setDifficultyColor(currentQuestion.difficulty)}`}>{currentQuestion.difficulty}</p>
-          </div>
-          <span className='text-xl ml-auto bg-yellow-200 px-2 mt-auto py-1 rounded-lg'>{points} $</span>
-        </div>
-        <div>
-          <h2 className='text-lg'>{currentQuestion.question}</h2>
-          <div className='grid grid-cols-2 gap-5 mt-2'>
-            {currentQuestion.choices.map((choice: string) => (
-              <button
-                key={choice}
-                onClick={() => handleUserChoice(choice, currentQuestion.answer)}
-                className='bg-blue-300 py-4 rounded-lg hover:bg-blue-400 cursor-pointer'
-              >
-                {choice}
-              </button>
-            ))}
-          </div>
-        </div>
+        {currentQuestion ?
+          <>
+            <div className='flex items-center mb-5'>
+              <h2 className='text-5xl pr-4'>{currentQuestion.category}</h2>
+              <div className='flex flex-row gap-2 mt-auto text-sm'>
+                <p className={`px-4 py-1 rounded-lg ${setGameModeColor(currentQuestion.gameMode)}`}>{currentQuestion.gameMode}</p>
+                <p className={`px-4 py-1 rounded-lg ${setDifficultyColor(currentQuestion.difficulty)}`}>{currentQuestion.difficulty}</p>
+              </div>
+              <span className='text-xl ml-auto bg-yellow-200 px-2 mt-auto py-1 rounded-lg'>{points} $</span>
+            </div>
+            <div>
+              <h2 className='text-lg'>{currentQuestion.question}</h2>
+              <div className='grid grid-cols-2 gap-5 mt-2'>
+                {currentQuestion.choices.map((choice: string) => (
+                  <button
+                    key={choice}
+                    onClick={() => handleUserChoice(choice, currentQuestion.answer)}
+                    className='bg-blue-300 py-4 rounded-lg hover:bg-blue-400 cursor-pointer'
+                  >
+                    {choice}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </>
+          :
+          <div className='flex flex-col items-center justify-center h-screen'></div>
+        }
         {(explanationModal && showExplanation) &&
           <div
             onClick={handleCloseExplanationModal}
@@ -126,7 +132,7 @@ const Questions = () => {
                 &#10060;
               </button>
               <p className='p-1 m-1'>
-                {currentQuestion.explanation}
+                {currentQuestion?.explanation}
               </p>
               <button onClick={handleCloseExplanationModal} className='bg-blue-300 hover:bg-blue-400 cursor-pointer rounded-lg w-44 py-1 mt-3 mb-1 ml-1'>Ok</button>
             </div>
