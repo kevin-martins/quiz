@@ -4,4 +4,5 @@ export type GameModesModel =
   "Sans faute" |
   "Vrai ou Faux" |
   "Masqué" |
+  "Trouve l'erreur" |
   "Survie"
