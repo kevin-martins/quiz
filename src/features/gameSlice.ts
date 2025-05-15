@@ -1,13 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { questions } from '../data/questions'
 import { QuestionModel } from '../models/questions'
-import { getRandomNumber } from '../helpers/helpers'
+import { getRandomNumber, shuffleArray } from '../helpers/helpers'
 import { AnswersModel } from '../models/answers'
+import { stat } from 'fs'
 
 export interface InitialState {
   questions: QuestionModel[],
   filteredQuestions: QuestionModel[],
-  currentQuestion: QuestionModel,
+  currentQuestion: QuestionModel | null,
   answers: AnswersModel[],
   points: number
 }
@@ -28,18 +29,25 @@ export const gameSlice = createSlice({
       state.questions = action.payload
     },
     setFilteredQuestions: (state, action: PayloadAction<QuestionModel[]>) => {
-      state.filteredQuestions = action.payload
+      state.filteredQuestions = shuffleArray(action.payload)
     },
     setCurrentQuestion: (state) => {
-      let randomQuestion = state.filteredQuestions[getRandomNumber(state.filteredQuestions.length)]
-      while (state.answers.some(answer => randomQuestion.id === answer.id)) {
-        randomQuestion = state.filteredQuestions[getRandomNumber(state.filteredQuestions.length)]
+      const filteredQuestionsLength = state.filteredQuestions.length
+      if (filteredQuestionsLength !== 0) {
+        const randomNumber = getRandomNumber(filteredQuestionsLength)
+        const newQuestion = state.filteredQuestions[randomNumber]
+        state.filteredQuestions.splice(randomNumber, 1)
+        state.currentQuestion = {
+          ...newQuestion,
+          choices: shuffleArray(newQuestion.choices)
+        }
+      } else {
+        state.currentQuestion = null
       }
-      state.currentQuestion = randomQuestion
     },
     addAnswer: (state, action: PayloadAction<boolean>) => {
       state.answers.push({
-        id: state.currentQuestion.id,
+        id: state.currentQuestion!.id,
         isCorrect: action.payload
       })
     },
