@@ -51,8 +51,8 @@ const StatisticsBoard = ({ answers }: StatisticsBoardProps) => {
   return (
     <div className='flex flex-col gap-[2px]'>
       <p>Nombre de réponses: {answers.length}</p>
-      <p>Bonnes réponses: {answers.reduce((acc, curr) => { return curr.isCorrect ? acc += 1 : acc }, 0)}</p>
-      <p>Mauvaises réponses: {answers.reduce((acc, curr) => { return !curr.isCorrect ? acc += 1 : acc }, 0)}</p>
+      <p>Bonnes réponses: {correctAnswers}</p>
+      <p>Mauvaises réponses: {incorrectAnswers}</p>
       <PieChart data={data} />
       <div className="relative w-[200px] h-[200px] m-auto rounded-full bg-purple-200">
         <div className="absolute top-0 right-0 bg-blue-500 bg-conic w-[200px] h-[200px]">purple</div>
@@ -64,14 +64,14 @@ const StatisticsBoard = ({ answers }: StatisticsBoardProps) => {
 }
 
 type AnswersBoardProps = {
-  filteredQuestions: QuestionModel[]
+  questions: QuestionModel[]
   answers: AnswersModel[]
 }
 
-const AnswersBoard = ({ filteredQuestions, answers }: AnswersBoardProps) => {
+const AnswersBoard = ({ questions, answers }: AnswersBoardProps) => {
   return (
     <div className='flex flex-col gap-[2px]'>
-      {getAllQuestionsById(filteredQuestions, answers).map((answer) => {
+      {getAllQuestionsById(questions, answers).map((answer) => {
         return (
           <div key={answer.id} className='grid grid-cols-8 gap-1'>
             <p className={`px-4 py-1 rounded-lg text-center ${setDifficultyColor(answer.difficulty)}`}>{answer.difficulty}</p>
@@ -88,7 +88,7 @@ const AnswersBoard = ({ filteredQuestions, answers }: AnswersBoardProps) => {
 }
 
 const LadderBoard = () => {
-  const { filteredQuestions, answers } = useAppSelector((state: RootState) => state.game)
+  const { questions, answers } = useAppSelector((state: RootState) => state.game)
   const [ladderBoard, setLadderBoard] = useState<LadderBoardType>(LadderBoardType.ANSWERS)
 
   return (
@@ -110,7 +110,7 @@ const LadderBoard = () => {
         </button>
       </div>
       {ladderBoard === LadderBoardType.ANSWERS &&
-        <AnswersBoard filteredQuestions={filteredQuestions} answers={answers} />
+        <AnswersBoard questions={questions} answers={answers} />
       }
       {ladderBoard === LadderBoardType.STATISTICS &&
         <StatisticsBoard answers={answers} />
