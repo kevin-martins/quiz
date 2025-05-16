@@ -1,6 +1,5 @@
 import { questions } from "../data/questions"
 import { AnswersModel } from "../models/answers"
-import { DifficultiesModel } from "../models/difficulties"
 import { QuestionModel } from "../models/questions"
 import { SettingsModels } from "../models/settings"
 

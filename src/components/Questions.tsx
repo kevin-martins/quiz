@@ -115,7 +115,7 @@ const Questions = () => {
                       onClick={() => handleUserChoice(choice, currentQuestion.answer)}
                       className='bg-blue-300 py-4 rounded-lg hover:bg-blue-400 cursor-pointer'
                     >
-                      {gameMode === "Masqué" && i === randomNumber ? "Autre" : choice}
+                      {gameMode === "Masqué" && i === randomNumber ? "l'Autre" : choice}
                     </button>
                   ))}
                 </div>
