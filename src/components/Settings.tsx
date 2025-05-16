@@ -8,8 +8,8 @@ import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { difficulties } from '../data/difficulties'
 import { gameModes } from '../data/gameModes'
 import { GameModesModel } from '../models/gameModes'
-import { filterQuestions } from '../helpers/helpers'
-import { setCurrentQuestion, setFilteredQuestions, setQuestions } from '../features/gameSlice'
+import { filterQuestions, getGameModeDescription } from '../helpers/helpers'
+import { setCurrentQuestion, setFilteredQuestions } from '../features/gameSlice'
 
 const Categories = () => {
   const selectedCategories: CategoriesModel[] = useAppSelector((state: RootState) => state.settings.categories)
@@ -111,10 +111,19 @@ const Difficulty = () => {
 
 const GameMode = () => {
   const selectedGameMode = useAppSelector((state: RootState) => state.settings.gameMode)
+  const [hoveredGameMode, setHoveredGameMode] = useState<GameModesModel | null>(null)
   const dispatch = useAppDispatch()
 
   const handleSetGameMode = (gameMode: GameModesModel) => {
     dispatch(setGameMode(gameMode))
+  }
+
+  const handleMouseEnter = (gameMode: GameModesModel) => {
+    setHoveredGameMode(gameMode)
+  }
+
+  const handleMouseLeave = () => {
+    setHoveredGameMode(null)
   }
 
   return (
@@ -124,17 +133,26 @@ const GameMode = () => {
         <span className='text-left rounded px-2 bg-gray-200'>{selectedGameMode}</span>
       </div>
       <div className='grid grid-cols-4 gap-2 m-2'>
-        {gameModes.map(gameMode => {
-          return (
+        {gameModes.map(gameMode => (
+          <div
+            key={gameMode}
+            className='relative'
+            >
             <button
-              key={gameMode}
+              onMouseEnter={() => handleMouseEnter(gameMode)}
+              onMouseLeave={handleMouseLeave}
               onClick={() => handleSetGameMode(gameMode)}
               className={`w-full border-[.5px] border-gray-400 rounded ${selectedGameMode === gameMode ? "bg-green-200" : "cursor-pointer hover:bg-gray-200"}`}
             >
               {gameMode}
             </button>
-          )
-        })}
+            {hoveredGameMode === gameMode &&
+              <div className='absolute z-50 text-sm bg-gray-200 rounded px-2 py-1 w-[300px] -top-13 left-0'>
+                {getGameModeDescription[gameMode]}
+              </div>
+            }
+          </div>
+        ))}
       </div>
     </div>
   )

@@ -1,15 +1,17 @@
 import { questions } from "../data/questions"
 import { AnswersModel } from "../models/answers"
+import { GameModesModel } from "../models/gameModes"
 import { QuestionModel } from "../models/questions"
 import { SettingsModels } from "../models/settings"
 
-export const getGameModeDescription = {
+export const getGameModeDescription: Record<GameModesModel, string> = {
   "Classique": "Réponds à une série de questions avec plusieurs choix de réponse.",
-  "Contre-la-montre": "Réponds à un maximum de questions en un temps limité.",
+  "Contre la montre": "Réponds à un maximum de questions en un temps limité.",
   "Sans faute": "Le jeu s'arrête à la première erreur. Jusqu'où iras-tu ?",
   "Vrai ou Faux": "Réponds à des affirmations en choisissant si elles sont vraies ou fausses.",
-  "Survie": "Chaque bonne réponse te fait gagner du temps, chaque mauvaise t'en fait perdre.",
-  "Masqué": "Réponds à une série de questions avec une des réponses masquée."
+  "Masqué": "Réponds à une série de questions avec une des réponses masquée.",
+  "Trouve l'erreur": "Trouve l'erreur dans une série de questions.",
+  "Survie": "Chaque bonne réponse te fait gagner du temps, chaque mauvaise t'en fait perdre."
 }
 
 export const filterQuestions = (settings: SettingsModels): QuestionModel[] => {
